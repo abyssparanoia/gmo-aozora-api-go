@@ -1,12 +1,11 @@
 /*
  * GMO Aozora Net Bank Open API
  *
- * <p>オープンAPI仕様書（PDF版）は下記リンクをご参照ください</p> <div>   <div style='display:inline-block;'><a style='text-decoration:none; font-weight:bold; color:#00b8d4;' href='https://gmo-aozora.com/business/service/api-specification.html' target='_blank'>オープンAPI仕様書</a></div><div style='display:inline-block; margin-left:2px; left:2px; width:10px; height:10px; border-top:2px solid #00b8d4; border-right:2px solid #00b8d4; transparent;-webkit-transform:rotate(45deg); transform: rotate(45deg);'></div> </div> <h4 style='margin-top:30px; border-left: solid 4px #1B2F48; padding: 0.1em 0.5em; color:#1B2F48;'>共通仕様</h4> <div style='width:100%; margin:10px;'>   <p style='font-weight:bold; color:#616161;'>＜HTTPリクエストヘッダ＞</p>   <div style='display:table; margin-left:10px; background-color:#29659b;'>     <div style='display:table-cell; min-width:130px; padding:9px; border:1px solid #fff; color:#fff;'>項目</div>     <div style='display:table-cell; width:85%; padding:9px; border:1px solid #fff; color:#fff;'>仕様</div>   </div>   <div style='display:table; margin-left:10px;'>     <div style='display:table-cell; min-width:130px; padding:9px; border:1px solid #fff; color:#fff; background-color:#29659b;'>プロトコル</div>     <div style='display:table-cell; width:85%; padding:9px; border:1px solid #fff; background-color:#f8f8f8;'>HTTP1.1/HTTPS</div>   </div>   <div style='display:table; margin-left:10px;'>     <div style='display:table-cell; min-width:130px; padding:9px; border:1px solid #fff; color:#fff; background-color:#29659b;'>charset</div>     <div style='display:table-cell; width:85%; padding:9px; border:1px solid #fff; background-color:#f8f8f8;'>UTF-8</div>   </div>   <div style='display:table; margin-left:10px;'>     <div style='display:table-cell; min-width:130px; padding:9px; border:1px solid #fff; color:#fff; background-color:#29659b;'>content-type</div>     <div style='display:table-cell; width:85%; padding:9px; border:1px solid #fff; background-color:#f8f8f8;'>application/json</div>   </div>   <div style='display:table; margin-left:10px;'>     <div style='display:table-cell; min-width:130px; padding:9px; border:1px solid #fff; color:#fff; background-color:#29659b;'>domain_name</div>     <div style='display:table-cell; width:85%; padding:9px; border:1px solid #fff; background-color:#f8f8f8;'>       本番環境：api.gmo-aozora.com</br>       開発環境：stg-api.gmo-aozora.com     </div>   </div>   <div style='display:table; margin-left:10px;'>     <div style='display:table-cell; min-width:130px; padding:9px; border:1px solid #fff; color:#fff; background-color:#29659b;'>メインURL</div>     <div style='display:table-cell; width:85%; padding:9px; border:1px solid #fff; background-color:#f8f8f8;'>       https://{domain_name}/ganb/api/corporation/{version}</br>       <span style='border-bottom:solid 1px;'>Version:1.x.x</span> の場合</br>       　https://api.gmo-aozora.com/ganb/api/corporation/<span style='border-bottom:solid 1px;'>v1</span>     </div>   </div> </div> <div style='margin:20px 10px;'>   <p style='font-weight:bold; color:#616161;'>＜リクエスト共通仕様＞</p>   <p style='padding-left:20px; font-weight:bold; color:#616161;'>NULLデータの扱い</p>   <p style='padding-left:40px;'>パラメータの値が空の場合、またはパラメータ自体が設定されていない場合、どちらもNULLとして扱います</p> </div> <div style='margin:20px 10px;'>   <p style='font-weight:bold; color:#616161;'>＜レスポンス共通仕様＞</p>   <p style='padding-left:20px; font-weight:bold; color:#616161;'>NULLデータの扱い</p>   <ul>     <li>レスポンスデータ</li>       <ul>         <li style='list-style-type:none;'>レスポンスデータの値が空の場合または、レスポンスデータ自体が設定されない場合は「項目自体を設定しません」と記載</li>       </ul>     <li>配列</li>       <ul>         <li style='list-style-type:none;'>配列の要素の値が空の場合は「空のリスト」と記載</li>         <li style='list-style-type:none;'>配列自体が設定されない場合は「項目自体を設定しません」と記載</li>       </ul>   </ul> </div> <div style='margin:20px 10px;'>   <p style='font-weight:bold; color:#616161;'>＜更新系APIに関する注意事項＞</p>   <ul>     <li style='list-style-type:none;'>更新系処理がタイムアウトとなった場合、処理自体は実行されている可能性がありますので、</li>     <li style='list-style-type:none;'>再実行を行う必要がある場合は必ず照会系の処理で実行状況を確認してから再実行を行ってください</li>   </ul> </div> 
+ * <p>オープンAPI仕様書（PDF版）は下記リンクをご参照ください</p> <div>   <div style='display:inline-block;'><a style='text-decoration:none; font-weight:bold; color:#00b8d4;' href='https://gmo-aozora.com/business/service/api-specification.html' target='_blank'>オープンAPI仕様書</a></div><div style='display:inline-block; margin-left:2px; left:2px; width:10px; height:10px; border-top:2px solid #00b8d4; border-right:2px solid #00b8d4; transparent;-webkit-transform:rotate(45deg); transform: rotate(45deg);'></div> </div> <h4 style='margin-top:30px; border-left: solid 4px #1B2F48; padding: 0.1em 0.5em; color:#1B2F48;'>共通仕様</h4> <div style='width:100%; margin:10px;'>   <p style='font-weight:bold; color:#616161;'>＜HTTPリクエストヘッダ＞</p>   <div style='display:table; margin-left:10px; background-color:#29659b;'>     <div style='display:table-cell; min-width:130px; padding:9px; border:1px solid #fff; color:#fff;'>項目</div>     <div style='display:table-cell; width:85%; padding:9px; border:1px solid #fff; color:#fff;'>仕様</div>   </div>   <div style='display:table; margin-left:10px;'>     <div style='display:table-cell; min-width:130px; padding:9px; border:1px solid #fff; color:#fff; background-color:#29659b;'>プロトコル</div>     <div style='display:table-cell; width:85%; padding:9px; border:1px solid #fff; background-color:#f8f8f8;'>HTTP1.1/HTTPS</div>   </div>   <div style='display:table; margin-left:10px;'>     <div style='display:table-cell; min-width:130px; padding:9px; border:1px solid #fff; color:#fff; background-color:#29659b;'>charset</div>     <div style='display:table-cell; width:85%; padding:9px; border:1px solid #fff; background-color:#f8f8f8;'>UTF-8</div>   </div>   <div style='display:table; margin-left:10px;'>     <div style='display:table-cell; min-width:130px; padding:9px; border:1px solid #fff; color:#fff; background-color:#29659b;'>content-type</div>     <div style='display:table-cell; width:85%; padding:9px; border:1px solid #fff; background-color:#f8f8f8;'>application/json</div>   </div>   <div style='display:table; margin-left:10px;'>     <div style='display:table-cell; min-width:130px; padding:9px; border:1px solid #fff; color:#fff; background-color:#29659b;'>domain_name</div>     <div style='display:table-cell; width:85%; padding:9px; border:1px solid #fff; background-color:#f8f8f8;'>       本番環境：api.gmo-aozora.com</br>       開発環境：stg-api.gmo-aozora.com     </div>   </div>   <div style='display:table; margin-left:10px;'>     <div style='display:table-cell; min-width:130px; padding:9px; border:1px solid #fff; color:#fff; background-color:#29659b;'>メインURL</div>     <div style='display:table-cell; width:85%; padding:9px; border:1px solid #fff; background-color:#f8f8f8;'>       https://{domain_name}/ganb/api/corporation/{version}</br>       <span style='border-bottom:solid 1px;'>Version:1.x.x</span> の場合</br>       　https://api.gmo-aozora.com/ganb/api/corporation/<span style='border-bottom:solid 1px;'>v1</span>     </div>   </div> </div> <div style='margin:20px 10px;'>   <p style='font-weight:bold; color:#616161;'>＜リクエスト共通仕様＞</p>   <p style='padding-left:20px; font-weight:bold; color:#616161;'>NULLデータの扱い</p>   <p style='padding-left:40px;'>パラメータの値が空の場合、またはパラメータ自体が設定されていない場合、どちらもNULLとして扱います</p> </div> <div style='margin:20px 10px;'>   <p style='font-weight:bold; color:#616161;'>＜レスポンス共通仕様＞</p>   <p style='padding-left:20px; font-weight:bold; color:#616161;'>NULLデータの扱い</p>   <ul>     <li>レスポンスデータ</li>       <ul>         <li style='list-style-type:none;'>レスポンスデータの値が空の場合または、レスポンスデータ自体が設定されない場合は「項目自体を設定しません」と記載</li>       </ul>     <li>配列</li>       <ul>         <li style='list-style-type:none;'>配列の要素の値が空の場合は「空のリスト」と記載</li>         <li style='list-style-type:none;'>配列自体が設定されない場合は「項目自体を設定しません」と記載</li>       </ul>   </ul> </div> <div style='margin:20px 10px;'>   <p style='font-weight:bold; color:#616161;'>＜更新系APIに関する注意事項＞</p>   <ul>     <li style='list-style-type:none;'>更新系処理がタイムアウトとなった場合、処理自体は実行されている可能性がありますので、</li>     <li style='list-style-type:none;'>再実行を行う必要がある場合は必ず照会系の処理で実行状況を確認してから再実行を行ってください</li>   </ul> </div>
  *
  * API version: 1.1.12
  * Generated by: Swagger Codegen (https://github.com/swagger-api/swagger-codegen.git)
  */
-
 package swagger
 
 import (
@@ -15,6 +14,7 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
+
 	"github.com/antihax/optional"
 )
 
@@ -25,39 +25,38 @@ var (
 
 type VirtualAccountApiService service
 
-/* 
+/*
 VirtualAccountApiService 振込入金口座入金明細照会
-&lt;p&gt;振込入金口座の入金明細を照会します&lt;/p&gt; &lt;h4 style&#x3D;&#39;margin-top:30px; border-left: solid 4px #1B2F48; padding: 0.1em 0.5em; color:#1B2F48;&#39;&gt;詳細説明&lt;/h4&gt; &lt;div style&#x3D;&#39;margin:10px;&#39;&gt;   &lt;p style&#x3D;&#39;font-weight:bold; color:#616161;&#39;&gt;取得上限件数&lt;/p&gt;   &lt;p style&#x3D;&#39;padding-left:20px;&#39;&gt;500件&lt;/p&gt;   &lt;p style&#x3D;&#39;padding-left:20px;&#39;&gt;取得できる明細数が500に満たないときは取得できる明細のみを返却します&lt;/p&gt;   &lt;p style&#x3D;&#39;padding-left:20px;&#39;&gt;取得できる明細が存在しない場合は「200：OK」とし明細を返却しません&lt;/p&gt; &lt;/div&gt; &lt;div style&#x3D;&#39;margin:10px;&#39;&gt;   &lt;p style&#x3D;&#39;font-weight:bold; color:#616161;&#39;&gt;ページング&lt;/p&gt;   &lt;p style&#x3D;&#39;padding-left:20px;&#39;&gt;2ページ目以降を照会する際は、初回と同じリクエスト内容に、初回レスポンスの次明細キーを追加してリクエストしてください&lt;/p&gt; &lt;/div&gt; &lt;div style&#x3D;&#39;margin:10px;&#39;&gt;   &lt;p style&#x3D;&#39;font-weight:bold; color:#616161;&#39;&gt;ソート順&lt;/p&gt;   &lt;p style&#x3D;&#39;padding-left:20px;&#39;&gt;取引の昇順&lt;/p&gt;   &lt;p style&#x3D;&#39;padding-left:20px;&#39;&gt;ソート順コードを指定することにより、ソート順を変更できます&lt;/p&gt; &lt;/div&gt; &lt;div style&#x3D;&#39;width:600px; margin:10px;&#39;&gt;   &lt;p style&#x3D;&#39;font-weight:bold; color:#616161;&#39;&gt;対象期間&lt;/p&gt;   &lt;div style&#x3D;&#39;display:table; margin-left:20px; background-color:#29659b;&#39;&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:160px; padding:9px; border:1px solid #fff; color:#fff;&#39;&gt;日本語名&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#39;&gt;&amp;#9312;&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#39;&gt;&amp;#9313;&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#39;&gt;&amp;#9314;&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#39;&gt;&amp;#9315;&lt;/div&gt;   &lt;/div&gt;   &lt;div style&#x3D;&#39;display:table; margin-left:20px;&#39;&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:160px; padding:9px; border:1px solid #fff; color:#fff; background-color:#29659b;&#39;&gt;対象期間From&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;○&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;○&lt;/div&gt;   &lt;/div&gt;   &lt;div style&#x3D;&#39;display:table; margin-left:20px;&#39;&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:160px; padding:9px; border:1px solid #fff; color:#fff; background-color:#29659b;&#39;&gt;対象期間To&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;○&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;○&lt;/div&gt;   &lt;/div&gt; &lt;/div&gt; &lt;div style&#x3D;&#39;margin:10px;&#39;&gt;   &lt;ul&gt;     &lt;li style&#x3D;&#39;list-style-type:none;&#39;&gt;&amp;#9312;の場合　当日分の入金明細を返却&lt;/li&gt;     &lt;li style&#x3D;&#39;list-style-type:none;&#39;&gt;&amp;#9313;の場合　対象期間From(※1)　～　当日までの入金明細を返却&lt;/li&gt;     &lt;li style&#x3D;&#39;list-style-type:none;&#39;&gt;&amp;#9314;の場合　取引初回(※2)　～　対象期間To(※1)までの入金明細を返却&lt;/li&gt;     &lt;li style&#x3D;&#39;list-style-type:none;&#39;&gt;&amp;#9315;の場合　対象期間From(※1)　～　対象期間To(※1)までの入金明細を返却&lt;/li&gt;     &lt;li style&#x3D;&#39;list-style-type:none; margin-left:10px;&#39;&gt;※1 : 照会する日付より6ヶ月以内の日付とし、超過する日付の場合は「400　Bad Request」を返却&lt;/li&gt;     &lt;li style&#x3D;&#39;list-style-type:none; margin-left:10px;&#39;&gt;※2 : 照会する日付より6ヶ月以内の取引とし、それを超えた範囲は返却しません&lt;/li&gt;    &lt;/ul&gt; &lt;/div&gt; &lt;div style&#x3D;&#39;width:600px; margin:10px;&#39;&gt;   &lt;p style&#x3D;&#39;font-weight:bold; color:#616161;&#39;&gt;入金口座ID、振込入金口座の設定別の仕様&lt;/p&gt;   &lt;div style&#x3D;&#39;display:table; margin-left:20px; background-color:#29659b;&#39;&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:160px; padding:9px; border:1px solid #fff; color:#fff;&#39;&gt;日本語名&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#39;&gt;&amp;#9312;&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#39;&gt;&amp;#9313;&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#39;&gt;&amp;#9314;&lt;/div&gt;   &lt;/div&gt;   &lt;div style&#x3D;&#39;display:table; margin-left:20px;&#39;&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:160px; padding:9px; border:1px solid #fff; color:#fff; background-color:#29659b;&#39;&gt;入金口座ID&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;○&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;○&lt;/div&gt;   &lt;/div&gt;   &lt;div style&#x3D;&#39;display:table; margin-left:20px;&#39;&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:160px; padding:9px; border:1px solid #fff; color:#fff; background-color:#29659b;&#39;&gt;振込入金口座ID&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;○&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;○&lt;/div&gt;   &lt;/div&gt; &lt;/div&gt; &lt;div style&#x3D;&#39;margin:10px;&#39;&gt;   &lt;ul&gt;     &lt;li style&#x3D;&#39;list-style-type:none;&#39;&gt;&amp;#9312;の場合　入金口座IDに該当する入金明細を返却します&lt;/li&gt;     &lt;li style&#x3D;&#39;list-style-type:none;&#39;&gt;&amp;#9313;の場合　振込入金口座IDに該当する入金明細を返却します&lt;/li&gt;     &lt;li style&#x3D;&#39;list-style-type:none;&#39;&gt;&amp;#9314;の場合　振込入金口座IDが入金口座IDに紐付いているか判定を行い、OKであれば入金明細を返却し、NGであればエラーを返却します&lt;/li&gt;   &lt;/ul&gt; &lt;/div&gt; &lt;div style&#x3D;&#39;margin-bottom:40px;&#39; /&gt; 
+&lt;p&gt;振込入金口座の入金明細を照会します&lt;/p&gt; &lt;h4 style&#x3D;&#x27;margin-top:30px; border-left: solid 4px #1B2F48; padding: 0.1em 0.5em; color:#1B2F48;&#x27;&gt;詳細説明&lt;/h4&gt; &lt;div style&#x3D;&#x27;margin:10px;&#x27;&gt;   &lt;p style&#x3D;&#x27;font-weight:bold; color:#616161;&#x27;&gt;取得上限件数&lt;/p&gt;   &lt;p style&#x3D;&#x27;padding-left:20px;&#x27;&gt;500件&lt;/p&gt;   &lt;p style&#x3D;&#x27;padding-left:20px;&#x27;&gt;取得できる明細数が500に満たないときは取得できる明細のみを返却します&lt;/p&gt;   &lt;p style&#x3D;&#x27;padding-left:20px;&#x27;&gt;取得できる明細が存在しない場合は「200：OK」とし明細を返却しません&lt;/p&gt; &lt;/div&gt; &lt;div style&#x3D;&#x27;margin:10px;&#x27;&gt;   &lt;p style&#x3D;&#x27;font-weight:bold; color:#616161;&#x27;&gt;ページング&lt;/p&gt;   &lt;p style&#x3D;&#x27;padding-left:20px;&#x27;&gt;2ページ目以降を照会する際は、初回と同じリクエスト内容に、初回レスポンスの次明細キーを追加してリクエストしてください&lt;/p&gt; &lt;/div&gt; &lt;div style&#x3D;&#x27;margin:10px;&#x27;&gt;   &lt;p style&#x3D;&#x27;font-weight:bold; color:#616161;&#x27;&gt;ソート順&lt;/p&gt;   &lt;p style&#x3D;&#x27;padding-left:20px;&#x27;&gt;取引の昇順&lt;/p&gt;   &lt;p style&#x3D;&#x27;padding-left:20px;&#x27;&gt;ソート順コードを指定することにより、ソート順を変更できます&lt;/p&gt; &lt;/div&gt; &lt;div style&#x3D;&#x27;width:600px; margin:10px;&#x27;&gt;   &lt;p style&#x3D;&#x27;font-weight:bold; color:#616161;&#x27;&gt;対象期間&lt;/p&gt;   &lt;div style&#x3D;&#x27;display:table; margin-left:20px; background-color:#29659b;&#x27;&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:160px; padding:9px; border:1px solid #fff; color:#fff;&#x27;&gt;日本語名&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#x27;&gt;&amp;#9312;&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#x27;&gt;&amp;#9313;&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#x27;&gt;&amp;#9314;&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#x27;&gt;&amp;#9315;&lt;/div&gt;   &lt;/div&gt;   &lt;div style&#x3D;&#x27;display:table; margin-left:20px;&#x27;&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:160px; padding:9px; border:1px solid #fff; color:#fff; background-color:#29659b;&#x27;&gt;対象期間From&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;○&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;○&lt;/div&gt;   &lt;/div&gt;   &lt;div style&#x3D;&#x27;display:table; margin-left:20px;&#x27;&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:160px; padding:9px; border:1px solid #fff; color:#fff; background-color:#29659b;&#x27;&gt;対象期間To&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;○&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;○&lt;/div&gt;   &lt;/div&gt; &lt;/div&gt; &lt;div style&#x3D;&#x27;margin:10px;&#x27;&gt;   &lt;ul&gt;     &lt;li style&#x3D;&#x27;list-style-type:none;&#x27;&gt;&amp;#9312;の場合　当日分の入金明細を返却&lt;/li&gt;     &lt;li style&#x3D;&#x27;list-style-type:none;&#x27;&gt;&amp;#9313;の場合　対象期間From(※1)　～　当日までの入金明細を返却&lt;/li&gt;     &lt;li style&#x3D;&#x27;list-style-type:none;&#x27;&gt;&amp;#9314;の場合　取引初回(※2)　～　対象期間To(※1)までの入金明細を返却&lt;/li&gt;     &lt;li style&#x3D;&#x27;list-style-type:none;&#x27;&gt;&amp;#9315;の場合　対象期間From(※1)　～　対象期間To(※1)までの入金明細を返却&lt;/li&gt;     &lt;li style&#x3D;&#x27;list-style-type:none; margin-left:10px;&#x27;&gt;※1 : 照会する日付より6ヶ月以内の日付とし、超過する日付の場合は「400　Bad Request」を返却&lt;/li&gt;     &lt;li style&#x3D;&#x27;list-style-type:none; margin-left:10px;&#x27;&gt;※2 : 照会する日付より6ヶ月以内の取引とし、それを超えた範囲は返却しません&lt;/li&gt;    &lt;/ul&gt; &lt;/div&gt; &lt;div style&#x3D;&#x27;width:600px; margin:10px;&#x27;&gt;   &lt;p style&#x3D;&#x27;font-weight:bold; color:#616161;&#x27;&gt;入金口座ID、振込入金口座の設定別の仕様&lt;/p&gt;   &lt;div style&#x3D;&#x27;display:table; margin-left:20px; background-color:#29659b;&#x27;&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:160px; padding:9px; border:1px solid #fff; color:#fff;&#x27;&gt;日本語名&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#x27;&gt;&amp;#9312;&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#x27;&gt;&amp;#9313;&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#x27;&gt;&amp;#9314;&lt;/div&gt;   &lt;/div&gt;   &lt;div style&#x3D;&#x27;display:table; margin-left:20px;&#x27;&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:160px; padding:9px; border:1px solid #fff; color:#fff; background-color:#29659b;&#x27;&gt;入金口座ID&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;○&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;○&lt;/div&gt;   &lt;/div&gt;   &lt;div style&#x3D;&#x27;display:table; margin-left:20px;&#x27;&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:160px; padding:9px; border:1px solid #fff; color:#fff; background-color:#29659b;&#x27;&gt;振込入金口座ID&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;○&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;○&lt;/div&gt;   &lt;/div&gt; &lt;/div&gt; &lt;div style&#x3D;&#x27;margin:10px;&#x27;&gt;   &lt;ul&gt;     &lt;li style&#x3D;&#x27;list-style-type:none;&#x27;&gt;&amp;#9312;の場合　入金口座IDに該当する入金明細を返却します&lt;/li&gt;     &lt;li style&#x3D;&#x27;list-style-type:none;&#x27;&gt;&amp;#9313;の場合　振込入金口座IDに該当する入金明細を返却します&lt;/li&gt;     &lt;li style&#x3D;&#x27;list-style-type:none;&#x27;&gt;&amp;#9314;の場合　振込入金口座IDが入金口座IDに紐付いているか判定を行い、OKであれば入金明細を返却し、NGであればエラーを返却します&lt;/li&gt;   &lt;/ul&gt; &lt;/div&gt; &lt;div style&#x3D;&#x27;margin-bottom:40px;&#x27; /&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param xAccessToken アクセストークン  minLength: 1 maxLength: 128 
- * @param optional nil or *DepositTransactionsUsingGETOpts - Optional Parameters:
-     * @param "VaContractAuthKey" (optional.String) -  振込入金口座API認証情報 半角英数字 銀行契約の方はNULLを設定 提携企業の方が、契約された顧客の入金明細照会を依頼される場合は必須 提携企業以外の方が値を設定されている場合は「400 Bad Request」を返却  minLength: 1 maxLength: 400 
-     * @param "RaId" (optional.String) -  入金口座ID 半角数字 入金先の口座を識別するID 本値が設定されていない場合、振込入金口座IDは必須 科目コードが以下の口座IDのみ受け付けます ・01&#x3D;普通預金（有利息） ・02&#x3D;普通預金（決済用）  minLength: 12 maxLength: 29 
-     * @param "VaId" (optional.String) -  振込入金口座ID 半角数字 振込入金口座を識別するID 本値が設定されていない場合、入金口座IDは必須  minLength: 10 maxLength: 10 
-     * @param "DateFrom" (optional.String) -  対象期間From 半角文字 YYYY-MM-DD形式 指定する場合は照会する日付より6ヶ月以内の日付とし、超えた場合は「400 Bad Request」を返却  minLength: 10 maxLength: 10 
-     * @param "DateTo" (optional.String) -  対象期間To 半角文字 YYYY-MM-DD形式 指定する場合は照会する日付より6ヶ月以内の日付とし、超えた場合は「400 Bad Request」を返却 対象期間Fromと対象期間Toを指定する場合は、対象期間From≦対象期間Toとし、それ以外は「400 Bad Request」を返却  minLength: 10 maxLength: 10 
-     * @param "SortOrderCode" (optional.String) -  ソート順コード 半角数字 取引日のソート順を指定するコード値 ・1&#x3D;昇順 ・2&#x3D;降順  minLength: 1 maxLength: 1 
-     * @param "NextItemKey" (optional.String) -  次明細キー 半角数字 初回要求時は未設定 初回応答で次明細キーが「true」の場合、返却された同項目を2回目以降に設定  minLength: 1 maxLength: 24 
-
+ * @param xAccessToken アクセストークン  minLength: 1 maxLength: 128
+ * @param optional nil or *VirtualAccountApiDepositTransactionsUsingGETOpts - Optional Parameters:
+     * @param "VaContractAuthKey" (optional.String) -  振込入金口座API認証情報 半角英数字 銀行契約の方はNULLを設定 提携企業の方が、契約された顧客の入金明細照会を依頼される場合は必須 提携企業以外の方が値を設定されている場合は「400 Bad Request」を返却  minLength: 1 maxLength: 400
+     * @param "RaId" (optional.String) -  入金口座ID 半角数字 入金先の口座を識別するID 本値が設定されていない場合、振込入金口座IDは必須 科目コードが以下の口座IDのみ受け付けます ・01&#x3D;普通預金（有利息） ・02&#x3D;普通預金（決済用）  minLength: 12 maxLength: 29
+     * @param "VaId" (optional.String) -  振込入金口座ID 半角数字 振込入金口座を識別するID 本値が設定されていない場合、入金口座IDは必須  minLength: 10 maxLength: 10
+     * @param "DateFrom" (optional.String) -  対象期間From 半角文字 YYYY-MM-DD形式 指定する場合は照会する日付より6ヶ月以内の日付とし、超えた場合は「400 Bad Request」を返却  minLength: 10 maxLength: 10
+     * @param "DateTo" (optional.String) -  対象期間To 半角文字 YYYY-MM-DD形式 指定する場合は照会する日付より6ヶ月以内の日付とし、超えた場合は「400 Bad Request」を返却 対象期間Fromと対象期間Toを指定する場合は、対象期間From≦対象期間Toとし、それ以外は「400 Bad Request」を返却  minLength: 10 maxLength: 10
+     * @param "SortOrderCode" (optional.String) -  ソート順コード 半角数字 取引日のソート順を指定するコード値 ・1&#x3D;昇順 ・2&#x3D;降順  minLength: 1 maxLength: 1
+     * @param "NextItemKey" (optional.String) -  次明細キー 半角数字 初回要求時は未設定 初回応答で次明細キーが「true」の場合、返却された同項目を2回目以降に設定  minLength: 1 maxLength: 24
 @return VaDepositTransactionsResponse
 */
 
-type DepositTransactionsUsingGETOpts struct { 
+type VirtualAccountApiDepositTransactionsUsingGETOpts struct {
 	VaContractAuthKey optional.String
-	RaId optional.String
-	VaId optional.String
-	DateFrom optional.String
-	DateTo optional.String
-	SortOrderCode optional.String
-	NextItemKey optional.String
+	RaId              optional.String
+	VaId              optional.String
+	DateFrom          optional.String
+	DateTo            optional.String
+	SortOrderCode     optional.String
+	NextItemKey       optional.String
 }
 
-func (a *VirtualAccountApiService) DepositTransactionsUsingGET(ctx context.Context, xAccessToken string, localVarOptionals *DepositTransactionsUsingGETOpts) (VaDepositTransactionsResponse, *http.Response, error) {
+func (a *VirtualAccountApiService) DepositTransactionsUsingGET(ctx context.Context, xAccessToken string, localVarOptionals *VirtualAccountApiDepositTransactionsUsingGETOpts) (VaDepositTransactionsResponse, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue VaDepositTransactionsResponse
 	)
 
@@ -90,7 +89,7 @@ func (a *VirtualAccountApiService) DepositTransactionsUsingGET(ctx context.Conte
 		localVarQueryParams.Add("nextItemKey", parameterToString(localVarOptionals.NextItemKey.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{"application/json;charset=UTF-8"}
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -125,188 +124,173 @@ func (a *VirtualAccountApiService) DepositTransactionsUsingGET(ctx context.Conte
 
 	if localVarHttpResponse.StatusCode < 300 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-		if err == nil { 
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
-		
 		if localVarHttpResponse.StatusCode == 200 {
 			var v VaDepositTransactionsResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 400 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 401 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 403 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 404 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 405 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 406 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 411 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 412 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 415 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 500 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 504 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		return localVarReturnValue, localVarHttpResponse, newErr
 	}
 
 	return localVarReturnValue, localVarHttpResponse, nil
 }
 
-/* 
+/*
 VirtualAccountApiService 振込入金口座発行
-&lt;p&gt;振込入金口座の発行を行います&lt;/p&gt; &lt;p&gt;&lt;font color&#x3D;\&quot;red\&quot;&gt;（銀行システムのメンテナンス時は本APIを実行することができないため、予め余分に振込入金口座を発行してプールしておくことをお勧めします）&lt;/font&gt;&lt;/p&gt; &lt;h4 style&#x3D;&#39;margin-top:30px; border-left: solid 4px #1B2F48; padding: 0.1em 0.5em; color:#1B2F48;&#39;&gt;詳細説明&lt;/h4&gt; &lt;div style&#x3D;&#39;margin:10px;&#39;&gt;   &lt;p style&#x3D;&#39;font-weight:bold; color:#616161;&#39;&gt;発行上限数&lt;/p&gt;   &lt;p style&#x3D;&#39;padding-left:20px;&#39;&gt;1リクエスト　：　1000口座まで&lt;/p&gt; &lt;/div&gt; &lt;div style&#x3D;&#39;margin:10px;&#39;&gt;   &lt;p style&#x3D;&#39;font-weight:bold; color:#616161;&#39;&gt;追加名義カナを前につける際の半角スペースについて&lt;/p&gt;   &lt;ul type&#x3D;&#39;square&#39;&gt;     &lt;li style&#x3D;&#39;margin:10px;&#39;&gt;       &lt;p&gt;追加名義カナの右側は1文字のみ許容します&lt;/p&gt;       &lt;div style&#x3D;&#39;width:600px; &#39;&gt;         &lt;div style&#x3D;&#39;display:table;&#39;&gt;           &lt;div style&#x3D;&#39;display:table-cell; width:50px; padding:2px;&#39;&gt;例）&lt;/div&gt;           &lt;div style&#x3D;&#39;display:table-cell; width:50px; padding:2px; font-size:120%; text-align:center;&#39;&gt;○&lt;/div&gt;           &lt;div style&#x3D;&#39;display:table-cell; width:200px; padding:2px; text-align:center;&#39;&gt;&lt;pre style&#x3D;&#39;width:150px;&#39;&gt;「ﾃｽﾄﾆｭｳｷﾝｸﾞﾁ 」&lt;/pre&gt;&lt;/div&gt;         &lt;/div&gt;         &lt;div style&#x3D;&#39;display:table;&#39;&gt;           &lt;div style&#x3D;&#39;display:table-cell; width:50px; padding:2px;&#39;&gt;&lt;/div&gt;           &lt;div style&#x3D;&#39;display:table-cell; width:50px; padding:2px; font-size:120%; text-align:center;&#39;&gt;×&lt;/div&gt;           &lt;div style&#x3D;&#39;display:table-cell; width:200px; padding:2px; text-align:center;&#39;&gt;&lt;pre style&#x3D;&#39;width:150px;&#39;&gt;「ﾃｽﾄﾆｭｳｷﾝｸﾞﾁ  」&lt;/pre&gt;&lt;/div&gt;         &lt;/div&gt;       &lt;/div&gt;     &lt;/li&gt;     &lt;li style&#x3D;&#39;margin:10px;&#39;&gt;       &lt;p&gt;追加名義カナの左側は許容しません&lt;/p&gt;       &lt;div style&#x3D;&#39;width:600px;&#39;&gt;         &lt;div style&#x3D;&#39;display:table;&#39;&gt;           &lt;div style&#x3D;&#39;display:table-cell; width:50px; padding:2px;&#39;&gt;例）&lt;/div&gt;           &lt;div style&#x3D;&#39;display:table-cell; width:50px; padding:2px; font-size:120%; text-align:center;&#39;&gt;○&lt;/div&gt;           &lt;div style&#x3D;&#39;display:table-cell; width:200px; padding:2px; text-align:center;&#39;&gt;&lt;pre style&#x3D;&#39;width:150px;&#39;&gt;「ﾃｽﾄﾆｭｳｷﾝｸﾞﾁ」&lt;/pre&gt;&lt;/div&gt;         &lt;/div&gt;         &lt;div style&#x3D;&#39;display:table;&#39;&gt;           &lt;div style&#x3D;&#39;display:table-cell; width:50px; padding:2px;&#39;&gt;&lt;/div&gt;           &lt;div style&#x3D;&#39;display:table-cell; width:50px; padding:2px; font-size:120%; text-align:center;&#39;&gt;×&lt;/div&gt;           &lt;div style&#x3D;&#39;display:table-cell; width:200px; padding:2px; text-align:center;&#39;&gt;&lt;pre style&#x3D;&#39;width:150px;&#39;&gt;「 ﾃｽﾄﾆｭｳｷﾝｸﾞﾁ」&lt;/pre&gt;&lt;/div&gt;         &lt;/div&gt;       &lt;/div&gt;     &lt;/li&gt;     &lt;li style&#x3D;&#39;margin:10px;&#39;&gt;       &lt;p&gt;連続スペースは許容しません&lt;/p&gt;       &lt;div style&#x3D;&#39;width:600px;&#39;&gt;         &lt;div style&#x3D;&#39;display:table;&#39;&gt;           &lt;div style&#x3D;&#39;display:table-cell; width:50px; padding:2px;&#39;&gt;例）&lt;/div&gt;           &lt;div style&#x3D;&#39;display:table-cell; width:50px; padding:2px; font-size:120%; text-align:center;&#39;&gt;○&lt;/div&gt;           &lt;div style&#x3D;&#39;display:table-cell; width:200px; padding:2px; text-align:center;&#39;&gt;&lt;pre style&#x3D;&#39;width:150px;&#39;&gt;「ﾃｽ ﾄﾆｭｳ ｷﾝｸﾞﾁ」&lt;/pre&gt;&lt;/div&gt;         &lt;/div&gt;         &lt;div style&#x3D;&#39;display:table;&#39;&gt;           &lt;div style&#x3D;&#39;display:table-cell; width:50px; padding:2px;&#39;&gt;&lt;/div&gt;           &lt;div style&#x3D;&#39;display:table-cell; width:50px; padding:2px; font-size:120%; text-align:center;&#39;&gt;×&lt;/div&gt;           &lt;div style&#x3D;&#39;display:table-cell; width:300px; padding:2px; text-align:center;&#39;&gt;&lt;pre style&#x3D;&#39;width:150px;&#39;&gt;「ﾃｽ  ﾄﾆｭｳｷﾝｸﾞﾁ」&lt;/pre&gt;&lt;/div&gt;         &lt;/div&gt;       &lt;/div&gt;     &lt;/li&gt;   &lt;/ul&gt; &lt;/div&gt; &lt;div style&#x3D;&#39;margin-bottom:40px;&#39; /&gt; 
+&lt;p&gt;振込入金口座の発行を行います&lt;/p&gt; &lt;p&gt;&lt;font color&#x3D;\&quot;red\&quot;&gt;（銀行システムのメンテナンス時は本APIを実行することができないため、予め余分に振込入金口座を発行してプールしておくことをお勧めします）&lt;/font&gt;&lt;/p&gt; &lt;h4 style&#x3D;&#x27;margin-top:30px; border-left: solid 4px #1B2F48; padding: 0.1em 0.5em; color:#1B2F48;&#x27;&gt;詳細説明&lt;/h4&gt; &lt;div style&#x3D;&#x27;margin:10px;&#x27;&gt;   &lt;p style&#x3D;&#x27;font-weight:bold; color:#616161;&#x27;&gt;発行上限数&lt;/p&gt;   &lt;p style&#x3D;&#x27;padding-left:20px;&#x27;&gt;1リクエスト　：　1000口座まで&lt;/p&gt; &lt;/div&gt; &lt;div style&#x3D;&#x27;margin:10px;&#x27;&gt;   &lt;p style&#x3D;&#x27;font-weight:bold; color:#616161;&#x27;&gt;追加名義カナを前につける際の半角スペースについて&lt;/p&gt;   &lt;ul type&#x3D;&#x27;square&#x27;&gt;     &lt;li style&#x3D;&#x27;margin:10px;&#x27;&gt;       &lt;p&gt;追加名義カナの右側は1文字のみ許容します&lt;/p&gt;       &lt;div style&#x3D;&#x27;width:600px; &#x27;&gt;         &lt;div style&#x3D;&#x27;display:table;&#x27;&gt;           &lt;div style&#x3D;&#x27;display:table-cell; width:50px; padding:2px;&#x27;&gt;例）&lt;/div&gt;           &lt;div style&#x3D;&#x27;display:table-cell; width:50px; padding:2px; font-size:120%; text-align:center;&#x27;&gt;○&lt;/div&gt;           &lt;div style&#x3D;&#x27;display:table-cell; width:200px; padding:2px; text-align:center;&#x27;&gt;&lt;pre style&#x3D;&#x27;width:150px;&#x27;&gt;「ﾃｽﾄﾆｭｳｷﾝｸﾞﾁ 」&lt;/pre&gt;&lt;/div&gt;         &lt;/div&gt;         &lt;div style&#x3D;&#x27;display:table;&#x27;&gt;           &lt;div style&#x3D;&#x27;display:table-cell; width:50px; padding:2px;&#x27;&gt;&lt;/div&gt;           &lt;div style&#x3D;&#x27;display:table-cell; width:50px; padding:2px; font-size:120%; text-align:center;&#x27;&gt;×&lt;/div&gt;           &lt;div style&#x3D;&#x27;display:table-cell; width:200px; padding:2px; text-align:center;&#x27;&gt;&lt;pre style&#x3D;&#x27;width:150px;&#x27;&gt;「ﾃｽﾄﾆｭｳｷﾝｸﾞﾁ  」&lt;/pre&gt;&lt;/div&gt;         &lt;/div&gt;       &lt;/div&gt;     &lt;/li&gt;     &lt;li style&#x3D;&#x27;margin:10px;&#x27;&gt;       &lt;p&gt;追加名義カナの左側は許容しません&lt;/p&gt;       &lt;div style&#x3D;&#x27;width:600px;&#x27;&gt;         &lt;div style&#x3D;&#x27;display:table;&#x27;&gt;           &lt;div style&#x3D;&#x27;display:table-cell; width:50px; padding:2px;&#x27;&gt;例）&lt;/div&gt;           &lt;div style&#x3D;&#x27;display:table-cell; width:50px; padding:2px; font-size:120%; text-align:center;&#x27;&gt;○&lt;/div&gt;           &lt;div style&#x3D;&#x27;display:table-cell; width:200px; padding:2px; text-align:center;&#x27;&gt;&lt;pre style&#x3D;&#x27;width:150px;&#x27;&gt;「ﾃｽﾄﾆｭｳｷﾝｸﾞﾁ」&lt;/pre&gt;&lt;/div&gt;         &lt;/div&gt;         &lt;div style&#x3D;&#x27;display:table;&#x27;&gt;           &lt;div style&#x3D;&#x27;display:table-cell; width:50px; padding:2px;&#x27;&gt;&lt;/div&gt;           &lt;div style&#x3D;&#x27;display:table-cell; width:50px; padding:2px; font-size:120%; text-align:center;&#x27;&gt;×&lt;/div&gt;           &lt;div style&#x3D;&#x27;display:table-cell; width:200px; padding:2px; text-align:center;&#x27;&gt;&lt;pre style&#x3D;&#x27;width:150px;&#x27;&gt;「 ﾃｽﾄﾆｭｳｷﾝｸﾞﾁ」&lt;/pre&gt;&lt;/div&gt;         &lt;/div&gt;       &lt;/div&gt;     &lt;/li&gt;     &lt;li style&#x3D;&#x27;margin:10px;&#x27;&gt;       &lt;p&gt;連続スペースは許容しません&lt;/p&gt;       &lt;div style&#x3D;&#x27;width:600px;&#x27;&gt;         &lt;div style&#x3D;&#x27;display:table;&#x27;&gt;           &lt;div style&#x3D;&#x27;display:table-cell; width:50px; padding:2px;&#x27;&gt;例）&lt;/div&gt;           &lt;div style&#x3D;&#x27;display:table-cell; width:50px; padding:2px; font-size:120%; text-align:center;&#x27;&gt;○&lt;/div&gt;           &lt;div style&#x3D;&#x27;display:table-cell; width:200px; padding:2px; text-align:center;&#x27;&gt;&lt;pre style&#x3D;&#x27;width:150px;&#x27;&gt;「ﾃｽ ﾄﾆｭｳ ｷﾝｸﾞﾁ」&lt;/pre&gt;&lt;/div&gt;         &lt;/div&gt;         &lt;div style&#x3D;&#x27;display:table;&#x27;&gt;           &lt;div style&#x3D;&#x27;display:table-cell; width:50px; padding:2px;&#x27;&gt;&lt;/div&gt;           &lt;div style&#x3D;&#x27;display:table-cell; width:50px; padding:2px; font-size:120%; text-align:center;&#x27;&gt;×&lt;/div&gt;           &lt;div style&#x3D;&#x27;display:table-cell; width:300px; padding:2px; text-align:center;&#x27;&gt;&lt;pre style&#x3D;&#x27;width:150px;&#x27;&gt;「ﾃｽ  ﾄﾆｭｳｷﾝｸﾞﾁ」&lt;/pre&gt;&lt;/div&gt;         &lt;/div&gt;       &lt;/div&gt;     &lt;/li&gt;   &lt;/ul&gt; &lt;/div&gt; &lt;div style&#x3D;&#x27;margin-bottom:40px;&#x27; /&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param xAccessToken アクセストークン  minLength: 1 maxLength: 128 
- * @param optional nil or *IssueUsingPOSTOpts - Optional Parameters:
+ * @param xAccessToken アクセストークン  minLength: 1 maxLength: 128
+ * @param optional nil or *VirtualAccountApiIssueUsingPOSTOpts - Optional Parameters:
      * @param "Body" (optional.Interface of VaIssueRequest) -  HTTPリクエストボディ
-
 @return VaIssueResponse
 */
 
-type IssueUsingPOSTOpts struct { 
+type VirtualAccountApiIssueUsingPOSTOpts struct {
 	Body optional.Interface
 }
 
-func (a *VirtualAccountApiService) IssueUsingPOST(ctx context.Context, xAccessToken string, localVarOptionals *IssueUsingPOSTOpts) (VaIssueResponse, *http.Response, error) {
+func (a *VirtualAccountApiService) IssueUsingPOST(ctx context.Context, xAccessToken string, localVarOptionals *VirtualAccountApiIssueUsingPOSTOpts) (VaIssueResponse, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue VaIssueResponse
 	)
 
@@ -337,11 +321,8 @@ func (a *VirtualAccountApiService) IssueUsingPOST(ctx context.Context, xAccessTo
 	localVarHeaderParams["x-access-token"] = parameterToString(xAccessToken, "")
 	// body params
 	if localVarOptionals != nil && localVarOptionals.Body.IsSet() {
-		
-		localVarOptionalBody, localVarOptionalBodyok := localVarOptionals.Body.Value().(VaIssueRequest)
-		if !localVarOptionalBodyok {
-				return localVarReturnValue, nil, reportError("body should be VaIssueRequest")
-		}
+
+		localVarOptionalBody := localVarOptionals.Body.Value()
 		localVarPostBody = &localVarOptionalBody
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
@@ -362,188 +343,173 @@ func (a *VirtualAccountApiService) IssueUsingPOST(ctx context.Context, xAccessTo
 
 	if localVarHttpResponse.StatusCode < 300 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-		if err == nil { 
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
-		
 		if localVarHttpResponse.StatusCode == 201 {
 			var v VaIssueResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 400 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 401 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 403 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 404 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 405 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 406 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 411 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 412 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 415 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 500 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 504 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		return localVarReturnValue, localVarHttpResponse, newErr
 	}
 
 	return localVarReturnValue, localVarHttpResponse, nil
 }
 
-/* 
+/*
 VirtualAccountApiService 振込入金口座状態変更
-&lt;p&gt;振込入金口座の状態変更（停止・再開・削除）を行います&lt;/p&gt; &lt;h4 style&#x3D;&#39;margin-top:30px; border-left: solid 4px #1B2F48; padding: 0.1em 0.5em; color:#1B2F48;&#39;&gt;詳細説明&lt;/h4&gt; &lt;div style&#x3D;&#39;margin:10px;&#39;&gt;   &lt;p style&#x3D;&#39;font-weight:bold; color:#616161;&#39;&gt;状態変更上限数&lt;/p&gt;   &lt;p style&#x3D;&#39;padding-left:20px;&#39;&gt;1リクエスト　：　100口座まで&lt;/p&gt; &lt;/div&gt; &lt;div style&#x3D;&#39;margin-bottom:40px;&#39; /&gt; 
+&lt;p&gt;振込入金口座の状態変更（停止・再開・削除）を行います&lt;/p&gt; &lt;h4 style&#x3D;&#x27;margin-top:30px; border-left: solid 4px #1B2F48; padding: 0.1em 0.5em; color:#1B2F48;&#x27;&gt;詳細説明&lt;/h4&gt; &lt;div style&#x3D;&#x27;margin:10px;&#x27;&gt;   &lt;p style&#x3D;&#x27;font-weight:bold; color:#616161;&#x27;&gt;状態変更上限数&lt;/p&gt;   &lt;p style&#x3D;&#x27;padding-left:20px;&#x27;&gt;1リクエスト　：　100口座まで&lt;/p&gt; &lt;/div&gt; &lt;div style&#x3D;&#x27;margin-bottom:40px;&#x27; /&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param xAccessToken アクセストークン  minLength: 1 maxLength: 128 
- * @param optional nil or *StatusChangeUsingPOSTOpts - Optional Parameters:
+ * @param xAccessToken アクセストークン  minLength: 1 maxLength: 128
+ * @param optional nil or *VirtualAccountApiStatusChangeUsingPOSTOpts - Optional Parameters:
      * @param "Body" (optional.Interface of VaStatusChangeRequest) -  HTTPリクエストボディ
-
 @return VaStatusChangeResponse
 */
 
-type StatusChangeUsingPOSTOpts struct { 
+type VirtualAccountApiStatusChangeUsingPOSTOpts struct {
 	Body optional.Interface
 }
 
-func (a *VirtualAccountApiService) StatusChangeUsingPOST(ctx context.Context, xAccessToken string, localVarOptionals *StatusChangeUsingPOSTOpts) (VaStatusChangeResponse, *http.Response, error) {
+func (a *VirtualAccountApiService) StatusChangeUsingPOST(ctx context.Context, xAccessToken string, localVarOptionals *VirtualAccountApiStatusChangeUsingPOSTOpts) (VaStatusChangeResponse, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue VaStatusChangeResponse
 	)
 
@@ -564,7 +530,7 @@ func (a *VirtualAccountApiService) StatusChangeUsingPOST(ctx context.Context, xA
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/json;charset=UTF-8"}
+	localVarHttpHeaderAccepts := []string{"application/json;charset=UTF-8", "application/json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -574,11 +540,8 @@ func (a *VirtualAccountApiService) StatusChangeUsingPOST(ctx context.Context, xA
 	localVarHeaderParams["x-access-token"] = parameterToString(xAccessToken, "")
 	// body params
 	if localVarOptionals != nil && localVarOptionals.Body.IsSet() {
-		
-		localVarOptionalBody, localVarOptionalBodyok := localVarOptionals.Body.Value().(VaStatusChangeRequest)
-		if !localVarOptionalBodyok {
-				return localVarReturnValue, nil, reportError("body should be VaStatusChangeRequest")
-		}
+
+		localVarOptionalBody := localVarOptionals.Body.Value()
 		localVarPostBody = &localVarOptionalBody
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
@@ -599,188 +562,173 @@ func (a *VirtualAccountApiService) StatusChangeUsingPOST(ctx context.Context, xA
 
 	if localVarHttpResponse.StatusCode < 300 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-		if err == nil { 
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
-		
 		if localVarHttpResponse.StatusCode == 200 {
 			var v VaStatusChangeResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 400 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 401 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 403 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 404 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 405 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 406 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 411 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 412 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 415 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 500 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 504 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		return localVarReturnValue, localVarHttpResponse, newErr
 	}
 
 	return localVarReturnValue, localVarHttpResponse, nil
 }
 
-/* 
+/*
 VirtualAccountApiService 振込入金口座解約申込
-振込入金口座契約の解約申込を行います 解約は解約受付月の月末に行われます 
+振込入金口座契約の解約申込を行います 解約は解約受付月の月末に行われます
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param xAccessToken アクセストークン  minLength: 1 maxLength: 128 
- * @param optional nil or *VaCloseRequestUsingPOSTOpts - Optional Parameters:
+ * @param xAccessToken アクセストークン  minLength: 1 maxLength: 128
+ * @param optional nil or *VirtualAccountApiVaCloseRequestUsingPOSTOpts - Optional Parameters:
      * @param "Body" (optional.Interface of VaCloseRequest) -  HTTPリクエストボディ
-
 @return VaCloseRequestResponse
 */
 
-type VaCloseRequestUsingPOSTOpts struct { 
+type VirtualAccountApiVaCloseRequestUsingPOSTOpts struct {
 	Body optional.Interface
 }
 
-func (a *VirtualAccountApiService) VaCloseRequestUsingPOST(ctx context.Context, xAccessToken string, localVarOptionals *VaCloseRequestUsingPOSTOpts) (VaCloseRequestResponse, *http.Response, error) {
+func (a *VirtualAccountApiService) VaCloseRequestUsingPOST(ctx context.Context, xAccessToken string, localVarOptionals *VirtualAccountApiVaCloseRequestUsingPOSTOpts) (VaCloseRequestResponse, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue VaCloseRequestResponse
 	)
 
@@ -811,11 +759,8 @@ func (a *VirtualAccountApiService) VaCloseRequestUsingPOST(ctx context.Context, 
 	localVarHeaderParams["x-access-token"] = parameterToString(xAccessToken, "")
 	// body params
 	if localVarOptionals != nil && localVarOptionals.Body.IsSet() {
-		
-		localVarOptionalBody, localVarOptionalBodyok := localVarOptionals.Body.Value().(VaCloseRequest)
-		if !localVarOptionalBodyok {
-				return localVarReturnValue, nil, reportError("body should be VaCloseRequest")
-		}
+
+		localVarOptionalBody := localVarOptionals.Body.Value()
 		localVarPostBody = &localVarOptionalBody
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
@@ -836,188 +781,173 @@ func (a *VirtualAccountApiService) VaCloseRequestUsingPOST(ctx context.Context, 
 
 	if localVarHttpResponse.StatusCode < 300 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-		if err == nil { 
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
-		
 		if localVarHttpResponse.StatusCode == 200 {
 			var v VaCloseRequestResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 400 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 401 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 403 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 404 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 405 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 406 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 411 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 412 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 415 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 500 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 504 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		return localVarReturnValue, localVarHttpResponse, newErr
 	}
 
 	return localVarReturnValue, localVarHttpResponse, nil
 }
 
-/* 
+/*
 VirtualAccountApiService 振込入金口座一覧照会
-&lt;p&gt;発行済みの振込入金口座の一覧を照会します&lt;/p&gt; &lt;h4 style&#x3D;&#39;margin-top:30px; border-left: solid 4px #1B2F48; padding: 0.1em 0.5em; color:#1B2F48;&#39;&gt;詳細説明&lt;/h4&gt; &lt;div style&#x3D;&#39;margin:10px;&#39;&gt;   &lt;p style&#x3D;&#39;font-weight:bold; color:#616161;&#39;&gt;リクエストボディの振込入金口座IDリスト上限件数&lt;/p&gt;   &lt;p style&#x3D;&#39;padding-left:20px;&#39;&gt;500件&lt;/p&gt; &lt;/div&gt; &lt;div style&#x3D;&#39;margin:10px;&#39;&gt;   &lt;p style&#x3D;&#39;font-weight:bold; color:#616161;&#39;&gt;取得上限件数&lt;/p&gt;   &lt;p style&#x3D;&#39;padding-left:20px;&#39;&gt;500件&lt;/p&gt;   &lt;p style&#x3D;&#39;padding-left:20px;&#39;&gt;取得できる明細数が500に満たないときは取得できる明細のみを返却します&lt;/p&gt;   &lt;p style&#x3D;&#39;padding-left:20px;&#39;&gt;取得できる明細が存在しない場合は「200：OK」とし明細を返却しません&lt;/p&gt; &lt;/div&gt; &lt;div style&#x3D;&#39;margin:10px;&#39;&gt;   &lt;p style&#x3D;&#39;font-weight:bold; color:#616161;&#39;&gt;ページング&lt;/p&gt;   &lt;p style&#x3D;&#39;padding-left:20px;&#39;&gt;2ページ目以降を照会する際は、初回と同じリクエスト内容に、初回レスポンスの次一覧キーを追加してリクエストしてください&lt;/p&gt; &lt;/div&gt; &lt;div style&#x3D;&#39;margin:10px;&#39;&gt;   &lt;p style&#x3D;&#39;font-weight:bold; color:#616161;&#39;&gt;ソート順&lt;/p&gt;   &lt;p style&#x3D;&#39;padding-left:20px;&#39;&gt;発行日時 昇順&lt;/p&gt; &lt;/div&gt; &lt;div style&#x3D;&#39;width:600px; margin:10px;&#39;&gt;   &lt;p style&#x3D;&#39;font-weight:bold; color:#616161;&#39;&gt;クエリパラメーター　最終入金日&lt;/p&gt;   &lt;div style&#x3D;&#39;display:table; margin-left:20px; background-color:#29659b;&#39;&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:160px; padding:9px; border:1px solid #fff; color:#fff;&#39;&gt;日本語名&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#39;&gt;&amp;#9312;&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#39;&gt;&amp;#9313;&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#39;&gt;&amp;#9314;&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#39;&gt;&amp;#9315;&lt;/div&gt;   &lt;/div&gt;   &lt;div style&#x3D;&#39;display:table; margin-left:20px;&#39;&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:160px; padding:9px; border:1px solid #fff; color:#fff; background-color:#29659b;&#39;&gt;最終入金日From&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;○&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;○&lt;/div&gt;   &lt;/div&gt;   &lt;div style&#x3D;&#39;display:table; margin-left:20px;&#39;&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:160px; padding:9px; border:1px solid #fff; color:#fff; background-color:#29659b;&#39;&gt;最終入金日To&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;○&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;○&lt;/div&gt;   &lt;/div&gt; &lt;/div&gt; &lt;div style&#x3D;&#39;margin:10px;&#39;&gt;   &lt;ul&gt;     &lt;li style&#x3D;&#39;list-style-type:none;&#39;&gt;&amp;#9312;の場合　絞りこみ条件なし&lt;/li&gt;     &lt;li style&#x3D;&#39;list-style-type:none;&#39;&gt;&amp;#9313;の場合　最終入金日From　～　当日までの振込入金口座情報を返却&lt;/li&gt;     &lt;li style&#x3D;&#39;list-style-type:none;&#39;&gt;&amp;#9314;の場合　最も過去となる最終入金日　～　最終入金日Toまでの振込入金口座情報を返却&lt;/li&gt;     &lt;li style&#x3D;&#39;list-style-type:none;&#39;&gt;&amp;#9315;の場合　最終入金日From　～　最終入金日Toまでの振込入金口座情報を返却&lt;/li&gt;   &lt;/ul&gt; &lt;/div&gt; &lt;div style&#x3D;&#39;width:600px; margin:10px;&#39;&gt;   &lt;p style&#x3D;&#39;font-weight:bold; color:#616161;&#39;&gt;クエリパラメーター　振込入金口座発行日&lt;/p&gt;   &lt;div style&#x3D;&#39;display:table; margin-left:20px; background-color:#29659b;&#39;&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:160px; padding:9px; border:1px solid #fff; color:#fff;&#39;&gt;日本語名&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#39;&gt;&amp;#9312;&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#39;&gt;&amp;#9313;&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#39;&gt;&amp;#9314;&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#39;&gt;&amp;#9315;&lt;/div&gt;   &lt;/div&gt;   &lt;div style&#x3D;&#39;display:table; margin-left:20px;&#39;&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:160px; padding:9px; border:1px solid #fff; color:#fff; background-color:#29659b;&#39;&gt;振込入金口座発行日From&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;○&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;○&lt;/div&gt;   &lt;/div&gt;   &lt;div style&#x3D;&#39;display:table; margin-left:20px;&#39;&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:160px; padding:9px; border:1px solid #fff; color:#fff; background-color:#29659b;&#39;&gt;振込入金口座発行日To&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;○&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;○&lt;/div&gt;   &lt;/div&gt; &lt;/div&gt; &lt;div style&#x3D;&#39;margin:10px;&#39;&gt;   &lt;ul&gt;     &lt;li style&#x3D;&#39;list-style-type:none;&#39;&gt;&amp;#9312;の場合　絞りこみ条件なし&lt;/li&gt;     &lt;li style&#x3D;&#39;list-style-type:none;&#39;&gt;&amp;#9313;の場合　振込入金口座発行日From　～　当日までの振込入金口座情報を返却&lt;/li&gt;     &lt;li style&#x3D;&#39;list-style-type:none;&#39;&gt;&amp;#9314;の場合　最も過去となる口座発行日　～　振込入金口座発行日Toまでの振込入金口座情報を返却&lt;/li&gt;     &lt;li style&#x3D;&#39;list-style-type:none;&#39;&gt;&amp;#9315;の場合　振込入金口座発行日From　～　振込入金口座発行日Toまでの振込入金口座情報を返却&lt;/li&gt;   &lt;/ul&gt; &lt;/div&gt; &lt;div style&#x3D;&#39;width:600px; margin:10px;&#39;&gt;   &lt;p style&#x3D;&#39;font-weight:bold; color:#616161;&#39;&gt;クエリパラメーター　有効期限&lt;/p&gt;   &lt;div style&#x3D;&#39;display:table; margin-left:20px; background-color:#29659b;&#39;&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:160px; padding:9px; border:1px solid #fff; color:#fff;&#39;&gt;日本語名&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#39;&gt;&amp;#9312;&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#39;&gt;&amp;#9313;&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#39;&gt;&amp;#9314;&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#39;&gt;&amp;#9315;&lt;/div&gt;   &lt;/div&gt;   &lt;div style&#x3D;&#39;display:table; margin-left:20px;&#39;&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:160px; padding:9px; border:1px solid #fff; color:#fff; background-color:#29659b;&#39;&gt;有効期限From&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;○&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;○&lt;/div&gt;   &lt;/div&gt;   &lt;div style&#x3D;&#39;display:table; margin-left:20px;&#39;&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:160px; padding:9px; border:1px solid #fff; color:#fff; background-color:#29659b;&#39;&gt;有効期限To&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;○&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;○&lt;/div&gt;   &lt;/div&gt; &lt;/div&gt; &lt;div style&#x3D;&#39;margin:10px;&#39;&gt;   &lt;ul&gt;     &lt;li style&#x3D;&#39;list-style-type:none;&#39;&gt;&amp;#9312;の場合　絞りこみ条件なし&lt;/li&gt;     &lt;li style&#x3D;&#39;list-style-type:none;&#39;&gt;&amp;#9313;の場合　有効期限From以上の振込入金口座情報を返却&lt;/li&gt;     &lt;li style&#x3D;&#39;list-style-type:none;&#39;&gt;&amp;#9314;の場合　最も過去となる有効期限　～　有効期限Toまでの振込入金口座情報を返却&lt;/li&gt;     &lt;li style&#x3D;&#39;list-style-type:none;&#39;&gt;&amp;#9315;の場合　有効期限From　～　有効期限Toまでの振込入金口座情報を返却&lt;/li&gt;   &lt;/ul&gt; &lt;/div&gt; &lt;div style&#x3D;&#39;width:600px; margin:10px;&#39;&gt;   &lt;p style&#x3D;&#39;font-weight:bold; color:#616161;&#39;&gt;クエリパラメーター　入金口座ID、　振込入金口座IDの設定別の仕様&lt;/p&gt;   &lt;div style&#x3D;&#39;display:table; margin-left:20px; background-color:#29659b;&#39;&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:160px; padding:9px; border:1px solid #fff; color:#fff;&#39;&gt;日本語名&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#39;&gt;&amp;#9312;&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#39;&gt;&amp;#9313;&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#39;&gt;&amp;#9314;&lt;/div&gt;   &lt;/div&gt;   &lt;div style&#x3D;&#39;display:table; margin-left:20px;&#39;&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:160px; padding:9px; border:1px solid #fff; color:#fff; background-color:#29659b;&#39;&gt;入金口座ID&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;○&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;○&lt;/div&gt;   &lt;/div&gt;   &lt;div style&#x3D;&#39;display:table; margin-left:20px;&#39;&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:160px; padding:9px; border:1px solid #fff; color:#fff; background-color:#29659b;&#39;&gt;振込入金口座ID&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;○&lt;/div&gt;     &lt;div style&#x3D;&#39;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#39;&gt;○&lt;/div&gt;   &lt;/div&gt; &lt;/div&gt; &lt;div style&#x3D;&#39;margin:10px;&#39;&gt;   &lt;ul&gt;     &lt;li style&#x3D;&#39;list-style-type:none;&#39;&gt;&amp;#9312;の場合　入金口座IDに該当する振込入金口座情報を返却&lt;/li&gt;     &lt;li style&#x3D;&#39;list-style-type:none;&#39;&gt;&amp;#9313;の場合　振込入金口座IDに該当する振込入金口座情報を返却&lt;/li&gt;     &lt;li style&#x3D;&#39;list-style-type:none;&#39;&gt;&amp;#9314;の場合　振込入金口座IDが入金口座IDに紐付いているか判定を行い、OKであれば入金明細を返却し、NGであればエラーを返却します&lt;/li&gt;   &lt;/ul&gt; &lt;/div&gt; &lt;div style&#x3D;&#39;margin:10px;&#39;&gt;   &lt;p style&#x3D;&#39;font-weight:bold; color:#616161;&#39;&gt;振込入金口座API認証情報&lt;/p&gt;   &lt;p style&#x3D;&#39;padding-left:20px;&#39;&gt;提携企業契約時は必須で、この値が設定されていない場合、銀行契約の一覧照会を返却します&lt;/p&gt; &lt;/div&gt; 
+&lt;p&gt;発行済みの振込入金口座の一覧を照会します&lt;/p&gt; &lt;h4 style&#x3D;&#x27;margin-top:30px; border-left: solid 4px #1B2F48; padding: 0.1em 0.5em; color:#1B2F48;&#x27;&gt;詳細説明&lt;/h4&gt; &lt;div style&#x3D;&#x27;margin:10px;&#x27;&gt;   &lt;p style&#x3D;&#x27;font-weight:bold; color:#616161;&#x27;&gt;リクエストボディの振込入金口座IDリスト上限件数&lt;/p&gt;   &lt;p style&#x3D;&#x27;padding-left:20px;&#x27;&gt;500件&lt;/p&gt; &lt;/div&gt; &lt;div style&#x3D;&#x27;margin:10px;&#x27;&gt;   &lt;p style&#x3D;&#x27;font-weight:bold; color:#616161;&#x27;&gt;取得上限件数&lt;/p&gt;   &lt;p style&#x3D;&#x27;padding-left:20px;&#x27;&gt;500件&lt;/p&gt;   &lt;p style&#x3D;&#x27;padding-left:20px;&#x27;&gt;取得できる明細数が500に満たないときは取得できる明細のみを返却します&lt;/p&gt;   &lt;p style&#x3D;&#x27;padding-left:20px;&#x27;&gt;取得できる明細が存在しない場合は「200：OK」とし明細を返却しません&lt;/p&gt; &lt;/div&gt; &lt;div style&#x3D;&#x27;margin:10px;&#x27;&gt;   &lt;p style&#x3D;&#x27;font-weight:bold; color:#616161;&#x27;&gt;ページング&lt;/p&gt;   &lt;p style&#x3D;&#x27;padding-left:20px;&#x27;&gt;2ページ目以降を照会する際は、初回と同じリクエスト内容に、初回レスポンスの次一覧キーを追加してリクエストしてください&lt;/p&gt; &lt;/div&gt; &lt;div style&#x3D;&#x27;margin:10px;&#x27;&gt;   &lt;p style&#x3D;&#x27;font-weight:bold; color:#616161;&#x27;&gt;ソート順&lt;/p&gt;   &lt;p style&#x3D;&#x27;padding-left:20px;&#x27;&gt;発行日時 昇順&lt;/p&gt; &lt;/div&gt; &lt;div style&#x3D;&#x27;width:600px; margin:10px;&#x27;&gt;   &lt;p style&#x3D;&#x27;font-weight:bold; color:#616161;&#x27;&gt;クエリパラメーター　最終入金日&lt;/p&gt;   &lt;div style&#x3D;&#x27;display:table; margin-left:20px; background-color:#29659b;&#x27;&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:160px; padding:9px; border:1px solid #fff; color:#fff;&#x27;&gt;日本語名&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#x27;&gt;&amp;#9312;&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#x27;&gt;&amp;#9313;&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#x27;&gt;&amp;#9314;&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#x27;&gt;&amp;#9315;&lt;/div&gt;   &lt;/div&gt;   &lt;div style&#x3D;&#x27;display:table; margin-left:20px;&#x27;&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:160px; padding:9px; border:1px solid #fff; color:#fff; background-color:#29659b;&#x27;&gt;最終入金日From&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;○&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;○&lt;/div&gt;   &lt;/div&gt;   &lt;div style&#x3D;&#x27;display:table; margin-left:20px;&#x27;&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:160px; padding:9px; border:1px solid #fff; color:#fff; background-color:#29659b;&#x27;&gt;最終入金日To&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;○&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;○&lt;/div&gt;   &lt;/div&gt; &lt;/div&gt; &lt;div style&#x3D;&#x27;margin:10px;&#x27;&gt;   &lt;ul&gt;     &lt;li style&#x3D;&#x27;list-style-type:none;&#x27;&gt;&amp;#9312;の場合　絞りこみ条件なし&lt;/li&gt;     &lt;li style&#x3D;&#x27;list-style-type:none;&#x27;&gt;&amp;#9313;の場合　最終入金日From　～　当日までの振込入金口座情報を返却&lt;/li&gt;     &lt;li style&#x3D;&#x27;list-style-type:none;&#x27;&gt;&amp;#9314;の場合　最も過去となる最終入金日　～　最終入金日Toまでの振込入金口座情報を返却&lt;/li&gt;     &lt;li style&#x3D;&#x27;list-style-type:none;&#x27;&gt;&amp;#9315;の場合　最終入金日From　～　最終入金日Toまでの振込入金口座情報を返却&lt;/li&gt;   &lt;/ul&gt; &lt;/div&gt; &lt;div style&#x3D;&#x27;width:600px; margin:10px;&#x27;&gt;   &lt;p style&#x3D;&#x27;font-weight:bold; color:#616161;&#x27;&gt;クエリパラメーター　振込入金口座発行日&lt;/p&gt;   &lt;div style&#x3D;&#x27;display:table; margin-left:20px; background-color:#29659b;&#x27;&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:160px; padding:9px; border:1px solid #fff; color:#fff;&#x27;&gt;日本語名&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#x27;&gt;&amp;#9312;&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#x27;&gt;&amp;#9313;&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#x27;&gt;&amp;#9314;&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#x27;&gt;&amp;#9315;&lt;/div&gt;   &lt;/div&gt;   &lt;div style&#x3D;&#x27;display:table; margin-left:20px;&#x27;&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:160px; padding:9px; border:1px solid #fff; color:#fff; background-color:#29659b;&#x27;&gt;振込入金口座発行日From&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;○&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;○&lt;/div&gt;   &lt;/div&gt;   &lt;div style&#x3D;&#x27;display:table; margin-left:20px;&#x27;&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:160px; padding:9px; border:1px solid #fff; color:#fff; background-color:#29659b;&#x27;&gt;振込入金口座発行日To&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;○&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;○&lt;/div&gt;   &lt;/div&gt; &lt;/div&gt; &lt;div style&#x3D;&#x27;margin:10px;&#x27;&gt;   &lt;ul&gt;     &lt;li style&#x3D;&#x27;list-style-type:none;&#x27;&gt;&amp;#9312;の場合　絞りこみ条件なし&lt;/li&gt;     &lt;li style&#x3D;&#x27;list-style-type:none;&#x27;&gt;&amp;#9313;の場合　振込入金口座発行日From　～　当日までの振込入金口座情報を返却&lt;/li&gt;     &lt;li style&#x3D;&#x27;list-style-type:none;&#x27;&gt;&amp;#9314;の場合　最も過去となる口座発行日　～　振込入金口座発行日Toまでの振込入金口座情報を返却&lt;/li&gt;     &lt;li style&#x3D;&#x27;list-style-type:none;&#x27;&gt;&amp;#9315;の場合　振込入金口座発行日From　～　振込入金口座発行日Toまでの振込入金口座情報を返却&lt;/li&gt;   &lt;/ul&gt; &lt;/div&gt; &lt;div style&#x3D;&#x27;width:600px; margin:10px;&#x27;&gt;   &lt;p style&#x3D;&#x27;font-weight:bold; color:#616161;&#x27;&gt;クエリパラメーター　有効期限&lt;/p&gt;   &lt;div style&#x3D;&#x27;display:table; margin-left:20px; background-color:#29659b;&#x27;&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:160px; padding:9px; border:1px solid #fff; color:#fff;&#x27;&gt;日本語名&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#x27;&gt;&amp;#9312;&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#x27;&gt;&amp;#9313;&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#x27;&gt;&amp;#9314;&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#x27;&gt;&amp;#9315;&lt;/div&gt;   &lt;/div&gt;   &lt;div style&#x3D;&#x27;display:table; margin-left:20px;&#x27;&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:160px; padding:9px; border:1px solid #fff; color:#fff; background-color:#29659b;&#x27;&gt;有効期限From&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;○&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;○&lt;/div&gt;   &lt;/div&gt;   &lt;div style&#x3D;&#x27;display:table; margin-left:20px;&#x27;&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:160px; padding:9px; border:1px solid #fff; color:#fff; background-color:#29659b;&#x27;&gt;有効期限To&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;○&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;○&lt;/div&gt;   &lt;/div&gt; &lt;/div&gt; &lt;div style&#x3D;&#x27;margin:10px;&#x27;&gt;   &lt;ul&gt;     &lt;li style&#x3D;&#x27;list-style-type:none;&#x27;&gt;&amp;#9312;の場合　絞りこみ条件なし&lt;/li&gt;     &lt;li style&#x3D;&#x27;list-style-type:none;&#x27;&gt;&amp;#9313;の場合　有効期限From以上の振込入金口座情報を返却&lt;/li&gt;     &lt;li style&#x3D;&#x27;list-style-type:none;&#x27;&gt;&amp;#9314;の場合　最も過去となる有効期限　～　有効期限Toまでの振込入金口座情報を返却&lt;/li&gt;     &lt;li style&#x3D;&#x27;list-style-type:none;&#x27;&gt;&amp;#9315;の場合　有効期限From　～　有効期限Toまでの振込入金口座情報を返却&lt;/li&gt;   &lt;/ul&gt; &lt;/div&gt; &lt;div style&#x3D;&#x27;width:600px; margin:10px;&#x27;&gt;   &lt;p style&#x3D;&#x27;font-weight:bold; color:#616161;&#x27;&gt;クエリパラメーター　入金口座ID、　振込入金口座IDの設定別の仕様&lt;/p&gt;   &lt;div style&#x3D;&#x27;display:table; margin-left:20px; background-color:#29659b;&#x27;&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:160px; padding:9px; border:1px solid #fff; color:#fff;&#x27;&gt;日本語名&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#x27;&gt;&amp;#9312;&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#x27;&gt;&amp;#9313;&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; text-align:center; font-size:120%; color:#fff;&#x27;&gt;&amp;#9314;&lt;/div&gt;   &lt;/div&gt;   &lt;div style&#x3D;&#x27;display:table; margin-left:20px;&#x27;&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:160px; padding:9px; border:1px solid #fff; color:#fff; background-color:#29659b;&#x27;&gt;入金口座ID&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;○&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;○&lt;/div&gt;   &lt;/div&gt;   &lt;div style&#x3D;&#x27;display:table; margin-left:20px;&#x27;&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:160px; padding:9px; border:1px solid #fff; color:#fff; background-color:#29659b;&#x27;&gt;振込入金口座ID&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;×&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;○&lt;/div&gt;     &lt;div style&#x3D;&#x27;display:table-cell; width:80px; padding:9px; border:1px solid #fff; background-color:#f8f8f8; font-size:120%; text-align:center;&#x27;&gt;○&lt;/div&gt;   &lt;/div&gt; &lt;/div&gt; &lt;div style&#x3D;&#x27;margin:10px;&#x27;&gt;   &lt;ul&gt;     &lt;li style&#x3D;&#x27;list-style-type:none;&#x27;&gt;&amp;#9312;の場合　入金口座IDに該当する振込入金口座情報を返却&lt;/li&gt;     &lt;li style&#x3D;&#x27;list-style-type:none;&#x27;&gt;&amp;#9313;の場合　振込入金口座IDに該当する振込入金口座情報を返却&lt;/li&gt;     &lt;li style&#x3D;&#x27;list-style-type:none;&#x27;&gt;&amp;#9314;の場合　振込入金口座IDが入金口座IDに紐付いているか判定を行い、OKであれば入金明細を返却し、NGであればエラーを返却します&lt;/li&gt;   &lt;/ul&gt; &lt;/div&gt; &lt;div style&#x3D;&#x27;margin:10px;&#x27;&gt;   &lt;p style&#x3D;&#x27;font-weight:bold; color:#616161;&#x27;&gt;振込入金口座API認証情報&lt;/p&gt;   &lt;p style&#x3D;&#x27;padding-left:20px;&#x27;&gt;提携企業契約時は必須で、この値が設定されていない場合、銀行契約の一覧照会を返却します&lt;/p&gt; &lt;/div&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param xAccessToken アクセストークン  minLength: 1 maxLength: 128 
- * @param optional nil or *VaListUsingPOSTOpts - Optional Parameters:
+ * @param xAccessToken アクセストークン  minLength: 1 maxLength: 128
+ * @param optional nil or *VirtualAccountApiVaListUsingPOSTOpts - Optional Parameters:
      * @param "Body" (optional.Interface of VaListRequest) -  HTTPリクエストボディ
-
 @return VaListResponse
 */
 
-type VaListUsingPOSTOpts struct { 
+type VirtualAccountApiVaListUsingPOSTOpts struct {
 	Body optional.Interface
 }
 
-func (a *VirtualAccountApiService) VaListUsingPOST(ctx context.Context, xAccessToken string, localVarOptionals *VaListUsingPOSTOpts) (VaListResponse, *http.Response, error) {
+func (a *VirtualAccountApiService) VaListUsingPOST(ctx context.Context, xAccessToken string, localVarOptionals *VirtualAccountApiVaListUsingPOSTOpts) (VaListResponse, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue VaListResponse
 	)
 
@@ -1048,11 +978,8 @@ func (a *VirtualAccountApiService) VaListUsingPOST(ctx context.Context, xAccessT
 	localVarHeaderParams["x-access-token"] = parameterToString(xAccessToken, "")
 	// body params
 	if localVarOptionals != nil && localVarOptionals.Body.IsSet() {
-		
-		localVarOptionalBody, localVarOptionalBodyok := localVarOptionals.Body.Value().(VaListRequest)
-		if !localVarOptionalBodyok {
-				return localVarReturnValue, nil, reportError("body should be VaListRequest")
-		}
+
+		localVarOptionalBody := localVarOptionals.Body.Value()
 		localVarPostBody = &localVarOptionalBody
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
@@ -1073,161 +1000,147 @@ func (a *VirtualAccountApiService) VaListUsingPOST(ctx context.Context, xAccessT
 
 	if localVarHttpResponse.StatusCode < 300 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-		if err == nil { 
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
-		
 		if localVarHttpResponse.StatusCode == 200 {
 			var v VaListResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 400 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 401 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 403 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 404 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 405 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 406 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 411 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 412 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 415 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 500 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		if localVarHttpResponse.StatusCode == 504 {
 			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
 		return localVarReturnValue, localVarHttpResponse, newErr
 	}
 

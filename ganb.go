@@ -232,7 +232,6 @@ func (g Ganb) RefreshTokens(refreshToken string) (Token, error) {
 		}
 
 		body, err := libs.Request("post", tokenURL, values, authHeader)
-
 		if err != nil {
 			fmt.Printf("\n\nRefresh token request error: %v", err)
 			return true, err
