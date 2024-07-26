@@ -1,8 +1,6 @@
 module github.com/gmoaozora/gmo-aozora-api-go
 
-go 1.21
-
-toolchain go1.22.4
+go 1.22.4
 
 require (
 	github.com/antihax/optional v1.0.0
