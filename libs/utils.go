@@ -60,7 +60,6 @@ func FormatRequest(r *http.Request) string {
 	r.ParseForm()
 	for key, value := range r.Form {
 		fmt.Printf("%s = %v\n", key, value)
-
 	}
 	fmt.Printf("--------------------\n\n")
 	return string(requestDump)

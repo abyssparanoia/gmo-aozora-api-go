@@ -11,11 +11,12 @@ package swagger
 
 import (
 	"context"
-	"github.com/antihax/optional"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"github.com/antihax/optional"
 )
 
 // Linger please
@@ -271,8 +272,8 @@ func (a *AccountApiService) AccountsDepositTransactionsUsingGET(ctx context.Cont
 /*
 AccountApiService 口座一覧照会
 保有する全ての口座情報一覧を照会します
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param xAccessToken アクセストークン  minLength: 1 maxLength: 128
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param xAccessToken アクセストークン  minLength: 1 maxLength: 128
 
 @return AccountsResponse
 */
