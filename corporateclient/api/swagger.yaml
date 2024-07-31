@@ -71,6 +71,8 @@ info:
   version: 1.1.12
 servers:
   - url: https://stg-api.gmo-aozora.com/ganb/api/corporation/v1
+security:
+  - bearerAuth: []
 tags:
   - name: account
     description: 口座
@@ -109,79 +111,79 @@ paths:
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/AccountsResponse"
+                $ref: '#/components/schemas/AccountsResponse'
         "400":
           description: Bad Request
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "401":
           description: Unauthorized
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "403":
           description: Forbidden
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "404":
           description: Not found
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "405":
           description: Method Not Allowed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "406":
           description: Not Acceptable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "411":
           description: Length Required
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "412":
           description: Precondition Failed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "415":
           description: Unsupported media type
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "500":
           description: Internal Server Error
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "503":
           description: Service Unavailable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "504":
           description: Gateway Timeout
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
       deprecated: false
       x-code-samples:
         - lang: cURL
@@ -372,79 +374,79 @@ paths:
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/BalancesResponse"
+                $ref: '#/components/schemas/BalancesResponse'
         "400":
           description: Bad Request
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "401":
           description: Unauthorized
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "403":
           description: Forbidden
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "404":
           description: Not found
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "405":
           description: Method Not Allowed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "406":
           description: Not Acceptable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "411":
           description: Length Required
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "412":
           description: Precondition Failed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "415":
           description: Unsupported media type
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "500":
           description: Internal Server Error
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "503":
           description: Service Unavailable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "504":
           description: Gateway Timeout
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
       deprecated: false
       x-code-samples:
         - lang: cURL
@@ -744,79 +746,79 @@ paths:
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/TransactionsResponse"
+                $ref: '#/components/schemas/TransactionsResponse'
         "400":
           description: Bad Request
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "401":
           description: Unauthorized
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "403":
           description: Forbidden
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "404":
           description: Not found
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "405":
           description: Method Not Allowed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "406":
           description: Not Acceptable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "411":
           description: Length Required
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "412":
           description: Precondition Failed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "415":
           description: Unsupported media type
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "500":
           description: Internal Server Error
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "503":
           description: Service Unavailable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "504":
           description: Gateway Timeout
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
       deprecated: false
       x-code-samples:
         - lang: cURL
@@ -1117,7 +1119,7 @@ paths:
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/DepositTransactionsResponse"
+                $ref: '#/components/schemas/DepositTransactionsResponse'
             application/json:
               example:
                 accountId: "101011234567"
@@ -1154,73 +1156,73 @@ paths:
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "401":
           description: Unauthorized
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "403":
           description: Forbidden
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "404":
           description: Not found
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "405":
           description: Method Not Allowed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "406":
           description: Not Acceptable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "411":
           description: Length Required
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "412":
           description: Precondition Failed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "415":
           description: Unsupported media type
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "500":
           description: Internal Server Error
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "503":
           description: Service Unavailable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "504":
           description: Gateway Timeout
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
       deprecated: false
       x-code-samples:
         - lang: cURL
@@ -1536,7 +1538,7 @@ paths:
         content:
           application/json;charset=UTF-8:
             schema:
-              $ref: "#/components/schemas/VaListRequest"
+              $ref: '#/components/schemas/VaListRequest'
         required: false
         x-exportParamName: Body
       responses:
@@ -1545,79 +1547,79 @@ paths:
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/VaListResponse"
+                $ref: '#/components/schemas/VaListResponse'
         "400":
           description: Bad Request
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "401":
           description: Unauthorized
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "403":
           description: Forbidden
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "404":
           description: Not found
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "405":
           description: Method Not Allowed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "406":
           description: Not Acceptable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "411":
           description: Length Required
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "412":
           description: Precondition Failed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "415":
           description: Unsupported media type
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "500":
           description: Internal Server Error
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "503":
           description: Service Unavailable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "504":
           description: Gateway Timeout
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
       deprecated: false
       x-code-samples:
         - lang: cURL
@@ -1978,79 +1980,79 @@ paths:
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/VaDepositTransactionsResponse"
+                $ref: '#/components/schemas/VaDepositTransactionsResponse'
         "400":
           description: Bad Request
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "401":
           description: Unauthorized
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "403":
           description: Forbidden
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "404":
           description: Not found
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "405":
           description: Method Not Allowed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "406":
           description: Not Acceptable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "411":
           description: Length Required
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "412":
           description: Precondition Failed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "415":
           description: Unsupported media type
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "500":
           description: Internal Server Error
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "503":
           description: Service Unavailable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "504":
           description: Gateway Timeout
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
       deprecated: false
       x-code-samples:
         - lang: cURL
@@ -2275,7 +2277,7 @@ paths:
         content:
           application/json;charset=UTF-8:
             schema:
-              $ref: "#/components/schemas/VaIssueRequest"
+              $ref: '#/components/schemas/VaIssueRequest'
         required: false
         x-exportParamName: Body
       responses:
@@ -2284,79 +2286,79 @@ paths:
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/VaIssueResponse"
+                $ref: '#/components/schemas/VaIssueResponse'
         "400":
           description: Bad Request
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "401":
           description: Unauthorized
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "403":
           description: Forbidden
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "404":
           description: Not found
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "405":
           description: Method Not Allowed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "406":
           description: Not Acceptable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "411":
           description: Length Required
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "412":
           description: Precondition Failed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "415":
           description: Unsupported media type
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "500":
           description: Internal Server Error
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "503":
           description: Service Unavailable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "504":
           description: Gateway Timeout
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
       deprecated: false
       x-code-samples:
         - lang: cURL
@@ -2606,7 +2608,7 @@ paths:
         content:
           application/json;charset=UTF-8:
             schema:
-              $ref: "#/components/schemas/VaStatusChangeRequest"
+              $ref: '#/components/schemas/VaStatusChangeRequest'
         required: false
         x-exportParamName: Body
       responses:
@@ -2615,7 +2617,7 @@ paths:
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/VaStatusChangeResponse"
+                $ref: '#/components/schemas/VaStatusChangeResponse'
             application/json:
               example:
                 vAccounts:
@@ -2645,73 +2647,73 @@ paths:
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "401":
           description: Unauthorized
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "403":
           description: Forbidden
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "404":
           description: Not found
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "405":
           description: Method Not Allowed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "406":
           description: Not Acceptable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "411":
           description: Length Required
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "412":
           description: Precondition Failed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "415":
           description: Unsupported media type
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "500":
           description: Internal Server Error
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "503":
           description: Service Unavailable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "504":
           description: Gateway Timeout
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
       deprecated: false
       x-code-samples:
         - lang: cURL
@@ -3032,7 +3034,7 @@ paths:
         content:
           application/json;charset=UTF-8:
             schema:
-              $ref: "#/components/schemas/VaCloseRequest"
+              $ref: '#/components/schemas/VaCloseRequest'
         required: false
         x-exportParamName: Body
       responses:
@@ -3041,79 +3043,79 @@ paths:
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/VaCloseRequestResponse"
+                $ref: '#/components/schemas/VaCloseRequestResponse'
         "400":
           description: Bad Request
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "401":
           description: Unauthorized
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "403":
           description: Forbidden
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "404":
           description: Not found
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "405":
           description: Method Not Allowed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "406":
           description: Not Acceptable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "411":
           description: Length Required
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "412":
           description: Precondition Failed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "415":
           description: Unsupported media type
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "500":
           description: Internal Server Error
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "503":
           description: Service Unavailable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "504":
           description: Gateway Timeout
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
       deprecated: false
       x-code-samples:
         - lang: cURL
@@ -3559,7 +3561,7 @@ paths:
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/TransferStatusResponse"
+                $ref: '#/components/schemas/TransferStatusResponse'
             application/json:
               example:
                 acceptanceKeyClass: "2"
@@ -3624,73 +3626,73 @@ paths:
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "401":
           description: Unauthorized
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "403":
           description: Forbidden
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "404":
           description: Not found
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "405":
           description: Method Not Allowed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "406":
           description: Not Acceptable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "411":
           description: Length Required
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "412":
           description: Precondition Failed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "415":
           description: Unsupported media type
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "500":
           description: Internal Server Error
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "503":
           description: Service Unavailable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "504":
           description: Gateway Timeout
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
       deprecated: false
       x-code-samples:
         - lang: cURL
@@ -3897,79 +3899,79 @@ paths:
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/TransferRequestResultResponse"
+                $ref: '#/components/schemas/TransferRequestResultResponse'
         "400":
           description: Bad Request
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "401":
           description: Unauthorized
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "403":
           description: Forbidden
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "404":
           description: Not found
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "405":
           description: Method Not Allowed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "406":
           description: Not Acceptable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "411":
           description: Length Required
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "412":
           description: Precondition Failed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "415":
           description: Unsupported media type
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "500":
           description: Internal Server Error
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "503":
           description: Service Unavailable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "504":
           description: Gateway Timeout
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
       deprecated: false
       x-code-samples:
         - lang: cURL
@@ -4144,7 +4146,7 @@ paths:
         content:
           application/json;charset=UTF-8:
             schema:
-              $ref: "#/components/schemas/TransferRequest"
+              $ref: '#/components/schemas/TransferRequest'
         required: true
         x-exportParamName: Body
       responses:
@@ -4153,7 +4155,7 @@ paths:
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/TransferFeeResponse"
+                $ref: '#/components/schemas/TransferFeeResponse'
             application/json:
               example:
                 accountId: "101011234567"
@@ -4172,73 +4174,73 @@ paths:
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/TransferError"
+                $ref: '#/components/schemas/TransferError'
         "401":
           description: Unauthorized
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "403":
           description: Forbidden
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "404":
           description: Not found
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "405":
           description: Method Not Allowed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "406":
           description: Not Acceptable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "411":
           description: Length Required
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "412":
           description: Precondition Failed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "415":
           description: Unsupported media type
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "500":
           description: Internal Server Error
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "503":
           description: Service Unavailable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "504":
           description: Gateway Timeout
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
       deprecated: false
       x-code-samples:
         - lang: cURL
@@ -4524,7 +4526,7 @@ paths:
         content:
           application/json;charset=UTF-8:
             schema:
-              $ref: "#/components/schemas/TransferRequest"
+              $ref: '#/components/schemas/TransferRequest'
         required: true
         x-exportParamName: Body
       responses:
@@ -4533,79 +4535,79 @@ paths:
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/TransferRequestResponse"
+                $ref: '#/components/schemas/TransferRequestResponse'
         "400":
           description: Bad Request
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/TransferError"
+                $ref: '#/components/schemas/TransferError'
         "401":
           description: Unauthorized
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "403":
           description: Forbidden
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "404":
           description: Not found
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "405":
           description: Method Not Allowed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "406":
           description: Not Acceptable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "411":
           description: Length Required
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "412":
           description: Precondition Failed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "415":
           description: Unsupported media type
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "500":
           description: Internal Server Error
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "503":
           description: Service Unavailable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "504":
           description: Gateway Timeout
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
       deprecated: false
       x-code-samples:
         - lang: cURL
@@ -4907,7 +4909,7 @@ paths:
         content:
           application/json;charset=UTF-8:
             schema:
-              $ref: "#/components/schemas/TransferCancelRequest"
+              $ref: '#/components/schemas/TransferCancelRequest'
         required: true
         x-exportParamName: Body
       responses:
@@ -4916,79 +4918,79 @@ paths:
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/TransferCancelResponse"
+                $ref: '#/components/schemas/TransferCancelResponse'
         "400":
           description: Bad Request
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "401":
           description: Unauthorized
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "403":
           description: Forbidden
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "404":
           description: Not found
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "405":
           description: Method Not Allowed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "406":
           description: Not Acceptable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "411":
           description: Length Required
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "412":
           description: Precondition Failed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "415":
           description: Unsupported media type
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "500":
           description: Internal Server Error
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "503":
           description: Service Unavailable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "504":
           description: Gateway Timeout
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
       deprecated: false
       x-code-samples:
         - lang: cURL
@@ -5484,7 +5486,7 @@ paths:
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/BulkTransferStatusResponse"
+                $ref: '#/components/schemas/BulkTransferStatusResponse'
             application/json:
               example:
                 acceptanceKeyClass: "1"
@@ -5549,73 +5551,73 @@ paths:
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "401":
           description: Unauthorized
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "403":
           description: Forbidden
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "404":
           description: Not found
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "405":
           description: Method Not Allowed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "406":
           description: Not Acceptable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "411":
           description: Length Required
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "412":
           description: Precondition Failed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "415":
           description: Unsupported media type
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "500":
           description: Internal Server Error
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "503":
           description: Service Unavailable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "504":
           description: Gateway Timeout
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
       deprecated: false
       x-code-samples:
         - lang: cURL
@@ -5822,79 +5824,79 @@ paths:
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/TransferRequestResultResponse"
+                $ref: '#/components/schemas/TransferRequestResultResponse'
         "400":
           description: Bad Request
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "401":
           description: Unauthorized
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "403":
           description: Forbidden
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "404":
           description: Not found
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "405":
           description: Method Not Allowed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "406":
           description: Not Acceptable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "411":
           description: Length Required
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "412":
           description: Precondition Failed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "415":
           description: Unsupported media type
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "500":
           description: Internal Server Error
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "503":
           description: Service Unavailable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "504":
           description: Gateway Timeout
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
       deprecated: false
       x-code-samples:
         - lang: cURL
@@ -6067,7 +6069,7 @@ paths:
         content:
           application/json;charset=UTF-8:
             schema:
-              $ref: "#/components/schemas/BulkTransferRequest"
+              $ref: '#/components/schemas/BulkTransferRequest'
         required: true
         x-exportParamName: Body
       responses:
@@ -6076,7 +6078,7 @@ paths:
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/TransferFeeResponse"
+                $ref: '#/components/schemas/TransferFeeResponse'
             application/json:
               example:
                 accountId: "101011234567"
@@ -6095,73 +6097,73 @@ paths:
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/TransferError"
+                $ref: '#/components/schemas/TransferError'
         "401":
           description: Unauthorized
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "403":
           description: Forbidden
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "404":
           description: Not found
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "405":
           description: Method Not Allowed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "406":
           description: Not Acceptable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "411":
           description: Length Required
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "412":
           description: Precondition Failed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "415":
           description: Unsupported media type
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "500":
           description: Internal Server Error
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "503":
           description: Service Unavailable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "504":
           description: Gateway Timeout
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
       deprecated: false
       x-code-samples:
         - lang: cURL
@@ -6470,7 +6472,7 @@ paths:
         content:
           application/json;charset=UTF-8:
             schema:
-              $ref: "#/components/schemas/BulkTransferRequest"
+              $ref: '#/components/schemas/BulkTransferRequest'
         required: true
         x-exportParamName: Body
       responses:
@@ -6479,79 +6481,79 @@ paths:
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/BulkTransferRequestResponse"
+                $ref: '#/components/schemas/BulkTransferRequestResponse'
         "400":
           description: Bad Request
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/TransferError"
+                $ref: '#/components/schemas/TransferError'
         "401":
           description: Unauthorized
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "403":
           description: Forbidden
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "404":
           description: Not found
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "405":
           description: Method Not Allowed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "406":
           description: Not Acceptable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "411":
           description: Length Required
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "412":
           description: Precondition Failed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "415":
           description: Unsupported media type
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "500":
           description: Internal Server Error
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "503":
           description: Service Unavailable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "504":
           description: Gateway Timeout
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
       deprecated: false
       x-code-samples:
         - lang: cURL
@@ -6881,7 +6883,7 @@ paths:
         content:
           application/json;charset=UTF-8:
             schema:
-              $ref: "#/components/schemas/TransferCancelRequest"
+              $ref: '#/components/schemas/TransferCancelRequest'
         required: true
         x-exportParamName: Body
       responses:
@@ -6890,7 +6892,7 @@ paths:
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/TransferCancelResponse"
+                $ref: '#/components/schemas/TransferCancelResponse'
             application/json:
               example:
                 accountId: "101011234567"
@@ -6903,73 +6905,73 @@ paths:
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "401":
           description: Unauthorized
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "403":
           description: Forbidden
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "404":
           description: Not found
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "405":
           description: Method Not Allowed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "406":
           description: Not Acceptable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "411":
           description: Length Required
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "412":
           description: Precondition Failed
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "415":
           description: Unsupported media type
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "500":
           description: Internal Server Error
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "503":
           description: Service Unavailable
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
         "504":
           description: Gateway Timeout
           content:
             application/json;charset=UTF-8:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
       deprecated: false
       x-code-samples:
         - lang: cURL
@@ -7346,7 +7348,7 @@ components:
           description: |
             口座情報リスト
           items:
-            $ref: "#/components/schemas/Account"
+            $ref: '#/components/schemas/Account'
       example:
         baseDate: 2018-08-10
         accounts:
@@ -7599,7 +7601,7 @@ components:
             残高情報リスト
             該当する情報が無い場合は、空のリストを返却します
           items:
-            $ref: "#/components/schemas/Balance"
+            $ref: '#/components/schemas/Balance'
       example:
         balances:
           - baseDate: 2018-08-10
@@ -7867,7 +7869,7 @@ components:
             振込申請情報
             振込申請情報のリスト
           items:
-            $ref: "#/components/schemas/TransferApply"
+            $ref: '#/components/schemas/TransferApply'
         transferAccepts:
           type: array
           description: |
@@ -7875,7 +7877,7 @@ components:
             振込受付情報のリスト
             該当する情報が無い場合は空のリストを返却
           items:
-            $ref: "#/components/schemas/TransferAccept"
+            $ref: '#/components/schemas/TransferAccept'
         bulktransferResponses:
           type: array
           description: |
@@ -7883,7 +7885,7 @@ components:
             総合振込レスポンス情報のリスト
             該当する情報が無い場合は空のリストを返却
           items:
-            $ref: "#/components/schemas/BulkTransferResponse"
+            $ref: '#/components/schemas/BulkTransferResponse'
       example:
         isFeeFreeUse: false
         remitterCode: "1234567890"
@@ -8216,7 +8218,7 @@ components:
             正常時のみ応答
             該当する情報が無い場合は空のリストを返却
           items:
-            $ref: "#/components/schemas/TransferDetailResponse"
+            $ref: '#/components/schemas/TransferDetailResponse'
         unableDetailInfos:
           type: array
           description: |
@@ -8224,7 +8226,7 @@ components:
             不能明細情報のリスト
             該当する情報が無い場合は項目自体を設定しません
           items:
-            $ref: "#/components/schemas/UnableDetailInfo"
+            $ref: '#/components/schemas/UnableDetailInfo'
       example:
         accountTypeCode: "1"
         transferAmount: "1000"
@@ -8359,7 +8361,7 @@ components:
             総合振込明細情報
             総合振込明細のリスト
           items:
-            $ref: "#/components/schemas/BulkTransfer"
+            $ref: '#/components/schemas/BulkTransfer'
       example:
         accountId: "101011234567"
         remitterName: ｼﾞ-ｴﾑｵ-ｼｮｳｼﾞ(ｶ
@@ -8475,7 +8477,7 @@ components:
             明細情報取得フラグが「True：取得する」、かつ明細情報取得結果フラグが「True：取得可」のときのみ設定します
             それ以外は項目自体を設定しません
           items:
-            $ref: "#/components/schemas/BulkTransferInfo"
+            $ref: '#/components/schemas/BulkTransferInfo'
       example:
         accountId: "101011234567"
         totalAmount: "1234500"
@@ -8688,7 +8690,7 @@ components:
             振込一括照会対象指定レスポンス
             該当する情報が無い場合は項目自体を設定しません
           items:
-            $ref: "#/components/schemas/TransferQueryBulkResponse"
+            $ref: '#/components/schemas/TransferQueryBulkResponse'
         bulkTransferDetails:
           type: array
           description: |
@@ -8696,7 +8698,7 @@ components:
             振込照会明細情報のリスト
             該当する情報が無い場合は空のリストを返却
           items:
-            $ref: "#/components/schemas/BulkTransferDetail"
+            $ref: '#/components/schemas/BulkTransferDetail'
       example:
         baseDate: 2018-08-10
         detailInfoResult: true
@@ -9207,7 +9209,7 @@ components:
             振込入金明細情報
             該当する情報が無い場合は、空のリストを返却します
           items:
-            $ref: "#/components/schemas/PaymentArrival"
+            $ref: '#/components/schemas/PaymentArrival'
       example:
         accountId: "101011234567"
         baseDate: 2018-08-10
@@ -9607,7 +9609,7 @@ components:
             入出金明細情報リスト
             該当する情報が無い場合は、空のリストを返却します
           items:
-            $ref: "#/components/schemas/Transaction"
+            $ref: '#/components/schemas/Transaction'
       example:
         accountId: "101011234567"
         baseDate: 2018-08-10
@@ -9781,7 +9783,7 @@ components:
             振込申請詳細情報のリスト
             該当する情報が無い場合は空のリストを返却
           items:
-            $ref: "#/components/schemas/TransferApplyDetail"
+            $ref: '#/components/schemas/TransferApplyDetail'
       example:
         transferApplyDetails:
           - applyUser: 山田二郎
@@ -10057,7 +10059,7 @@ components:
             振込申請情報
             振込申請情報のリスト
           items:
-            $ref: "#/components/schemas/TransferApply"
+            $ref: '#/components/schemas/TransferApply'
         transferAccepts:
           type: array
           description: |
@@ -10065,7 +10067,7 @@ components:
             振込受付情報のリスト
             該当する情報が無い場合は空のリストを返却
           items:
-            $ref: "#/components/schemas/TransferAccept"
+            $ref: '#/components/schemas/TransferAccept'
         transferResponses:
           type: array
           description: |
@@ -10073,7 +10075,7 @@ components:
             振込レスポンス情報のリスト
             該当する情報が無い場合は空のリストを返却
           items:
-            $ref: "#/components/schemas/TransferResponse"
+            $ref: '#/components/schemas/TransferResponse'
       example:
         isFeeFreeUse: true
         transferApplies:
@@ -10329,7 +10331,7 @@ components:
             エラー詳細情報
             該当する情報が無い場合は空のリストを返却
           items:
-            $ref: "#/components/schemas/ErrorDetail"
+            $ref: '#/components/schemas/ErrorDetail'
         transferErrorDetails:
           type: array
           description: |
@@ -10337,7 +10339,7 @@ components:
             個別明細がエラーの場合のみ応答
             該当する情報が無い場合は空のリストを返却
           items:
-            $ref: "#/components/schemas/TransferErrorDetail"
+            $ref: '#/components/schemas/TransferErrorDetail'
     TransferErrorDetail:
       title: TransferErrorDetail
       type: object
@@ -10357,7 +10359,7 @@ components:
             エラー詳細情報
             該当する情報が無い場合は空のリストを返却
           items:
-            $ref: "#/components/schemas/ErrorDetail"
+            $ref: '#/components/schemas/ErrorDetail'
     TransferFeeDetail:
       title: TransferFeeDetail
       required:
@@ -10438,7 +10440,7 @@ components:
             振込手数料明細情報
             個別明細を設定
           items:
-            $ref: "#/components/schemas/TransferFeeDetail"
+            $ref: '#/components/schemas/TransferFeeDetail'
       example:
         accountId: "101011234567"
         baseDate: 2018-07-30
@@ -10538,7 +10540,7 @@ components:
             正常時のみ応答
             該当する情報が無い場合は空のリストを返却
           items:
-            $ref: "#/components/schemas/TransferDetailResponse"
+            $ref: '#/components/schemas/TransferDetailResponse'
         unableDetailInfos:
           type: array
           description: |
@@ -10546,7 +10548,7 @@ components:
             不能明細情報のリスト
             該当する情報が無い場合は項目自体を設定しません
           items:
-            $ref: "#/components/schemas/UnableDetailInfo"
+            $ref: '#/components/schemas/UnableDetailInfo'
       example:
         transferDetailResponses:
           - usedPoint: "1000"
@@ -10617,7 +10619,7 @@ components:
             振込一括照会対象ステータス
             該当する情報が無い場合は項目自体を設定しません
           items:
-            $ref: "#/components/schemas/RequestTransferStatus"
+            $ref: '#/components/schemas/RequestTransferStatus'
         requestTransferClass:
           maxLength: 1
           minLength: 1
@@ -10756,7 +10758,7 @@ components:
             振込情報
             振込情報のリスト
           items:
-            $ref: "#/components/schemas/Transfer"
+            $ref: '#/components/schemas/Transfer'
       example:
         accountId: "101011234567"
         remitterName: ｼﾞ-ｴﾑｵ-ｼｮｳｼﾞ(ｶ
@@ -10936,7 +10938,7 @@ components:
             振込情報のリスト
             該当する情報が無い場合は空のリストを返却
           items:
-            $ref: "#/components/schemas/TransferInfo"
+            $ref: '#/components/schemas/TransferInfo'
       example:
         accountId: "101011234567"
         transferInfos:
@@ -11055,7 +11057,7 @@ components:
             振込一括照会対象指定レスポンス
             該当する情報が無い場合は項目自体を設定しません
           items:
-            $ref: "#/components/schemas/TransferQueryBulkResponse"
+            $ref: '#/components/schemas/TransferQueryBulkResponse'
         transferDetails:
           type: array
           description: |
@@ -11063,7 +11065,7 @@ components:
             振込照会明細情報のリスト
             該当する情報が無い場合は空のリストを返却
           items:
-            $ref: "#/components/schemas/TransferDetail"
+            $ref: '#/components/schemas/TransferDetail'
       example:
         baseDate: 2018-08-10
         transferQueryBulkResponses:
@@ -11940,7 +11942,7 @@ components:
             振込入金口座入金明細情報リスト
             該当する情報が無い場合は、空のリストを返却します
           items:
-            $ref: "#/components/schemas/VaTransaction"
+            $ref: '#/components/schemas/VaTransaction'
       example:
         baseDate: 2018-08-10
         vaTransactions:
@@ -12138,7 +12140,7 @@ components:
           type: array
           description: 振込入金口座リスト
           items:
-            $ref: "#/components/schemas/Va"
+            $ref: '#/components/schemas/Va'
       example:
         expireDateTime: 2018-08-31T12:59:59+09:00
         vaTypeCode: "1"
@@ -12205,7 +12207,7 @@ components:
             照会したい振込入金口座状態コードのリスト
             上限3件まで設定可能
           items:
-            $ref: "#/components/schemas/VaStatusCode"
+            $ref: '#/components/schemas/VaStatusCode'
         latestDepositDateFrom:
           maxLength: 10
           minLength: 10
@@ -12321,7 +12323,7 @@ components:
             照会したい振込入金口座IDのリスト
             上限500件まで設定可能
           items:
-            $ref: "#/components/schemas/VaId"
+            $ref: '#/components/schemas/VaId'
       example:
         depositAmountExistCode: "1"
         expireDateFrom: 2018-08-31
@@ -12403,7 +12405,7 @@ components:
             振込入金口座情報のリスト
             該当する情報が無い場合は空のリストを返却
           items:
-            $ref: "#/components/schemas/VAccount"
+            $ref: '#/components/schemas/VAccount'
       example:
         baseDate: 2018-08-10
         count: "1"
@@ -12493,7 +12495,7 @@ components:
             振込入金口座IDリスト
             上限は100件
           items:
-            $ref: "#/components/schemas/VaId"
+            $ref: '#/components/schemas/VaId'
       example:
         vaContractAuthKey: 5CSDFG1515A54DF
         vaStatusChangeCode: "1"
@@ -12512,7 +12514,7 @@ components:
             振込入金口座情報
             振込入金口座情報のリスト
           items:
-            $ref: "#/components/schemas/VAccount"
+            $ref: '#/components/schemas/VAccount'
       example:
         vAccounts:
           - vaBranchCode: "502"
@@ -12729,4 +12731,9 @@ components:
         vaAccountNameKana: ｼﾞ-ｴﾑｵ-ｱｵｿﾞﾗ(ｶ)ﾃｽﾄﾆﾕｳｷﾝｸﾞﾁ
         vaBranchNameKana: ｱｼﾞｻｲ
         remarks: 振込 ｲ-ﾃﾞｲ-ｱｲ テスト　タロウ あじさい支店 1036971
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
 x-original-swagger-version: "2.0"
