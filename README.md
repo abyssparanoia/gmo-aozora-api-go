@@ -2,11 +2,11 @@
 
 ## About
 
-GMOあおぞらネット銀行について
+GMO あおぞらネット銀行について
 
 https://gmo-aozora.com/
 
-GMOあおぞらネット銀行 API開発者ポータルについて
+GMO あおぞらネット銀行 API 開発者ポータルについて
 
 https://api.gmo-aozora.com/ganb/developer/
 
@@ -20,8 +20,8 @@ Golang 1.8+
 
 ## Installation
 
-- get the repository from *Github*\
-  `$ go get github.com/gmoaozora/gmo-aozora-api-go`
+- get the repository from _Github_\
+  `$ go get github.com/abyssparanoia/gmo-aozora-api-go`
 
 - get a package with the following command \
   `$ go get github.com/antihax/optional`
@@ -31,59 +31,71 @@ Golang 1.8+
 ### Enviroment
 
 Add the configuration below into your config file\
-  `vi conf.json`
+ `vi conf.json`
 
-* stg
+- stg
 
-    conf.json
-    ```json
-    {
-        "AUTH_BASE_URL": "https://stg-api.gmo-aozora.com/ganb/api/auth/v1",
-        "JWT_ISSUER": "https://stg-api.gmo-aozora.com/",
-        "AUTH_PATH": "/authorization",
-        "TOKEN_PATH": "/token",
-        "SALT": "PleaseDefineYourself"
-    }
-    ```
-    
-    [configuration.go - Personal ](./personalclient/configuration.go) 
-    ```go
-		BasePath:      "https://stg-api.gmo-aozora.com/ganb/api/personal/v1",
-    ```
-    [configuration.go - Corporate ](./corporateclient/configuration.go) 
-    ```go
-		BasePath:      "https://stg-api.gmo-aozora.com/ganb/api/corporation/v1",
-    ```
-    [configuration.go - Webhook ](./webhookclient/configuration.go) 
-    ```go
-		BasePath:      "https://stg-api.gmo-aozora.com/ganb/api/webhooks/v1",
-    ```
+  conf.json
 
+  ```json
+  {
+    "AUTH_BASE_URL": "https://stg-api.gmo-aozora.com/ganb/api/auth/v1",
+    "JWT_ISSUER": "https://stg-api.gmo-aozora.com/",
+    "AUTH_PATH": "/authorization",
+    "TOKEN_PATH": "/token",
+    "SALT": "PleaseDefineYourself"
+  }
+  ```
 
-* prod
+  [configuration.go - Personal ](./personalclient/configuration.go)
 
-    conf.json
-    ```json
-    {
-        "AUTH_BASE_URL": "https://api.gmo-aozora.com/ganb/api/auth/v1",
-        "JWT_ISSUER": "https://api.gmo-aozora.com/",
-        "AUTH_PATH": "/authorization",
-        "TOKEN_PATH": "/token",
-        "SALT": "PleaseDefineYourself"
-    }
-    ```
-    [configuration.go - Personal ](./personalclient/configuration.go) 
-    ```go
-		BasePath:      "https://api.gmo-aozora.com/ganb/api/personal/v1",
-    ```
-    [configuration.go - Corporate ](./corporateclient/configuration.go) 
-    ```go
-		BasePath:      "https://api.gmo-aozora.com/ganb/api/corporation/v1",
-    ```
-    [configuration.go - Webhook ](./webhookclient/configuration.go) 
-    ```go
-		BasePath:      "https://api.gmo-aozora.com/ganb/api/webhooks/v1",
-    ```
+  ```go
+  	BasePath:      "https://stg-api.gmo-aozora.com/ganb/api/personal/v1",
+  ```
+
+  [configuration.go - Corporate ](./corporateclient/configuration.go)
+
+  ```go
+  	BasePath:      "https://stg-api.gmo-aozora.com/ganb/api/corporation/v1",
+  ```
+
+  [configuration.go - Webhook ](./webhookclient/configuration.go)
+
+  ```go
+  	BasePath:      "https://stg-api.gmo-aozora.com/ganb/api/webhooks/v1",
+  ```
+
+- prod
+
+  conf.json
+
+  ```json
+  {
+    "AUTH_BASE_URL": "https://api.gmo-aozora.com/ganb/api/auth/v1",
+    "JWT_ISSUER": "https://api.gmo-aozora.com/",
+    "AUTH_PATH": "/authorization",
+    "TOKEN_PATH": "/token",
+    "SALT": "PleaseDefineYourself"
+  }
+  ```
+
+  [configuration.go - Personal ](./personalclient/configuration.go)
+
+  ```go
+  	BasePath:      "https://api.gmo-aozora.com/ganb/api/personal/v1",
+  ```
+
+  [configuration.go - Corporate ](./corporateclient/configuration.go)
+
+  ```go
+  	BasePath:      "https://api.gmo-aozora.com/ganb/api/corporation/v1",
+  ```
+
+  [configuration.go - Webhook ](./webhookclient/configuration.go)
+
+  ```go
+  	BasePath:      "https://api.gmo-aozora.com/ganb/api/webhooks/v1",
+  ```
 
 ## Documentation
 
@@ -92,11 +104,10 @@ Add the configuration below into your config file\
 - [Personal](personalclient/docs/)
 - [Webhook](webhookclient/docs/)
 
-
 ## Autor
 
 GMO Aozora Net Bank, Ltd. (open-api@gmo-aozora.com)
 
 ## Licence
 
-[MIT](https://github.com/gmoaozora/gmo-aozora-api-go/blob/master/LICENSE)
+[MIT](https://github.com/abyssparanoia/gmo-aozora-api-go/blob/master/LICENSE)
