@@ -9,8 +9,8 @@ import (
 	"net/url"
 	"os"
 
+	"github.com/abyssparanoia/gmo-aozora-api-go/libs"
 	"github.com/dgrijalva/jwt-go"
-	"github.com/gmoaozora/gmo-aozora-api-go/libs"
 	"github.com/google/uuid"
 	"github.com/pkg/errors"
 	try "gopkg.in/matryer/try.v1"

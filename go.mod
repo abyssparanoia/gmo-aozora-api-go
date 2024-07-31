@@ -1,4 +1,4 @@
-module github.com/gmoaozora/gmo-aozora-api-go
+module github.com/abyssparanoia/gmo-aozora-api-go
 
 go 1.22.4
 

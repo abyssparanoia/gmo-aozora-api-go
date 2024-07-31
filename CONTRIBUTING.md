@@ -1,29 +1,32 @@
 # コントリビューターガイドライン
 
 ## バグを発見したら
-* 脆弱性に関わる問題の場合、issue への書き込みは行わず、[こちらのフォーム](https://faq.gmo-aozora.com/form/open_api.html) から連絡してください。
 
-* [issue](https://github.com/gmoaozora/gmo-aozora-api-go/issues) を検索し、当該バグがすでに報告されていないことを確認してください。
+- 脆弱性に関わる問題の場合、issue への書き込みは行わず、[こちらのフォーム](https://faq.gmo-aozora.com/form/open_api.html) から連絡してください。
 
-* 新たなバグは「タイトル」と「明確な内容の説明」、「再現した環境・手順」を必ず記載してください。
+- [issue](https://github.com/abyssparanoia/gmo-aozora-api-go/issues) を検索し、当該バグがすでに報告されていないことを確認してください。
 
-* バグの修正方法が明確な場合には、[Pull Request](https://github.com/gmoaozora/gmo-aozora-api-go/pulls) を送信してください。
+- 新たなバグは「タイトル」と「明確な内容の説明」、「再現した環境・手順」を必ず記載してください。
 
-* 安定性、機能性、妥当性に影響を与えない変更は受け入れません。
-効果のないリファクタリングは、余計なコストだけを消費し、新たなバグを引き起こす可能性が少なからずあるためです。
+- バグの修正方法が明確な場合には、[Pull Request](https://github.com/abyssparanoia/gmo-aozora-api-go/pulls) を送信してください。
+
+- 安定性、機能性、妥当性に影響を与えない変更は受け入れません。
+  効果のないリファクタリングは、余計なコストだけを消費し、新たなバグを引き起こす可能性が少なからずあるためです。
 
 ## 新機能については
-* [銀行APIに関するお問合せ](https://faq.gmo-aozora.com/form/open_api.html) からお問合せください。
+
+- [銀行 API に関するお問合せ](https://faq.gmo-aozora.com/form/open_api.html) からお問合せください。
 
 ## テクニカルサポート
-* 提供しておりません。
 
-## 開発者向けドキュメント、FAQページ
-* [開発者ポータル](https://api.gmo-aozora.com/ganb/developer/api-docs/)
+- 提供しておりません。
 
-* [sunabarはじめてガイド](https://gmo-aozora.com/sunabar/tutorial/01.html)
+## 開発者向けドキュメント、FAQ ページ
 
-* [sunabarFAQ](https://faq.gmo-aozora.com/faq_list.html?page=1&category=102)
+- [開発者ポータル](https://api.gmo-aozora.com/ganb/developer/api-docs/)
 
-* [sunabarオンラインコミュニティ](https://www.facebook.com/groups/sunabar.gmo)
+- [sunabar はじめてガイド](https://gmo-aozora.com/sunabar/tutorial/01.html)
 
+- [sunabarFAQ](https://faq.gmo-aozora.com/faq_list.html?page=1&category=102)
+
+- [sunabar オンラインコミュニティ](https://www.facebook.com/groups/sunabar.gmo)
