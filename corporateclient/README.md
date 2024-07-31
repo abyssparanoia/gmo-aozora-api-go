@@ -97,8 +97,8 @@ Class | Method | HTTP request | Description
  - [VaTransaction](docs/VaTransaction.md)
 
 ## Documentation For Authorization
- Endpoints do not require authorization.
 
+## bearerAuth
 
 ## Author
 
