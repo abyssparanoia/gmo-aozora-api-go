@@ -12,6 +12,7 @@ require (
 	golang.org/x/oauth2 v0.15.0
 	golang.org/x/tools v0.23.0
 	gopkg.in/matryer/try.v1 v1.0.0-20150601225556-312d2599e12e
+	moul.io/http2curl v1.0.0
 	mvdan.cc/gofumpt v0.6.0
 )
 
@@ -153,6 +154,7 @@ require (
 	github.com/sirupsen/logrus v1.9.3 // indirect
 	github.com/sivchari/containedctx v1.0.3 // indirect
 	github.com/sivchari/tenv v1.7.1 // indirect
+	github.com/smartystreets/goconvey v1.8.1 // indirect
 	github.com/sonatard/noctx v0.0.2 // indirect
 	github.com/sourcegraph/go-diff v0.7.0 // indirect
 	github.com/spf13/afero v1.11.0 // indirect

@@ -10,10 +10,13 @@ package swagger
 
 import (
 	"context"
+	"fmt"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"moul.io/http2curl"
 )
 
 // Linger please
@@ -67,6 +70,12 @@ func (a *WebhooksApiService) Subscribe(ctx context.Context, body SubscribeReques
 	if err != nil {
 		return nil, err
 	}
+
+	command, err := http2curl.GetCurlCommand(r)
+	if err != nil {
+		return nil, err
+	}
+	fmt.Println(command)
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
