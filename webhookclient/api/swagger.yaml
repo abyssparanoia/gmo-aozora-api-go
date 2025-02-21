@@ -20,20 +20,20 @@ paths:
       description: 指定したイベント通知に対応するイベント通知（WebHook）の配信開始、配信停止をコントロールします
       operationId: accountsUsing
       parameters:
-        - name: Authorization
+        - name: x-access-token
           in: header
           description: |
-            認証情報
-            銀行システムが配信先システムに発行した、クライアントIDとクライアントシーレットを":"（コロン）で連結し、Base64エンコードした値を設定
-            minLength: ‐
-            maxLength: ‐
+            アクセストークン
+
+            minLength: 1
+            maxLength: 128
           required: true
           style: simple
           explode: false
           schema:
             type: string
-            x-exportParamName: Authorization
-          x-exportParamName: Authorization
+            x-exportParamName: XAccessToken
+          x-exportParamName: XAccessToken
       requestBody:
         description: HTTPリクエストボディ
         content:
@@ -258,20 +258,20 @@ paths:
       description: 各種イベント通知（Webhook）の配信状態を取得できます。
       operationId: subscribeStatusUsingGET
       parameters:
-        - name: Authorization
+        - name: x-access-token
           in: header
           description: |
-            認証情報
-            銀行システムが配信先システムに発行した、クライアントIDとクライアントシーレットを":"（コロン）で連結し、Base64エンコードした値を設定
-            minLength: ‐
-            maxLength: ‐
+            アクセストークン
+
+            minLength: 1
+            maxLength: 128
           required: true
           style: simple
           explode: false
           schema:
             type: string
-            x-exportParamName: Authorization
-          x-exportParamName: Authorization
+            x-exportParamName: XAccessToken
+          x-exportParamName: XAccessToken
       responses:
         "200":
           description: OK
@@ -301,20 +301,20 @@ paths:
         </div>
       operationId: accountsUsingGET
       parameters:
-        - name: Authorization
+        - name: x-access-token
           in: header
           description: |
-            認証情報
-            銀行システムが配信先システムに発行した、クライアントIDとクライアントシーレットを":"（コロン）で連結し、Base64エンコードした値を設定
-            minLength: ‐
-            maxLength: ‐
+            アクセストークン
+
+            minLength: 1
+            maxLength: 128
           required: true
           style: simple
           explode: false
           schema:
             type: string
-            x-exportParamName: Authorization
-          x-exportParamName: Authorization
+            x-exportParamName: XAccessToken
+          x-exportParamName: XAccessToken
       responses:
         "200":
           description: OK
@@ -968,4 +968,9 @@ components:
               raId: "201011234567"
               raAccountNumber: "1234567"
             timestamp: 2019-01-31T12:59:59+09:00
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
 x-original-swagger-version: "2.0"
