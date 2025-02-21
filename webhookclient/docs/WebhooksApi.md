@@ -36,17 +36,13 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **SubscribeStatusUsingGET**
-> SubscribeStatusResponse SubscribeStatusUsingGET(ctx, xAccessToken)
+> SubscribeStatusResponse SubscribeStatusUsingGET(ctx, )
 通知配信状態取得
 
 各種イベント通知（Webhook）の配信状態を取得できます。
 
 ### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **xAccessToken** | **string**| アクセストークン  minLength: 1 maxLength: 128  | 
+This endpoint does not need any parameter.
 
 ### Return type
 
