@@ -214,11 +214,10 @@ func (a *WebhooksApiService) Subscribe(ctx context.Context, body SubscribeReques
 WebhooksApiService 通知配信状態取得
 各種イベント通知（Webhook）の配信状態を取得できます。
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-  - @param xAccessToken アクセストークン  minLength: 1 maxLength: 128
 
 @return SubscribeStatusResponse
 */
-func (a *WebhooksApiService) SubscribeStatusUsingGET(ctx context.Context, xAccessToken string) (SubscribeStatusResponse, *http.Response, error) {
+func (a *WebhooksApiService) SubscribeStatusUsingGET(ctx context.Context) (SubscribeStatusResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
@@ -251,7 +250,6 @@ func (a *WebhooksApiService) SubscribeStatusUsingGET(ctx context.Context, xAcces
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["x-access-token"] = parameterToString(xAccessToken, "")
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err

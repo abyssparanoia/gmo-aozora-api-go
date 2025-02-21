@@ -244,21 +244,6 @@ paths:
       summary: 通知配信状態取得
       description: 各種イベント通知（Webhook）の配信状態を取得できます。
       operationId: subscribeStatusUsingGET
-      parameters:
-        - name: x-access-token
-          in: header
-          description: |
-            アクセストークン
-
-            minLength: 1
-            maxLength: 128
-          required: true
-          style: simple
-          explode: false
-          schema:
-            type: string
-            x-exportParamName: XAccessToken
-          x-exportParamName: XAccessToken
       responses:
         "200":
           description: OK
