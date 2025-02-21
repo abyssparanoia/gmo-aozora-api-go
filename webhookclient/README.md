@@ -21,8 +21,7 @@ All URIs are relative to *https://api.gmo-aozora.com/ganb/api/webhooks/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*WebhooksApi* | [**AccountsUsing**](docs/WebhooksApi.md#accountsusing) | **Post** /subscribe | 通知配信制御
-*WebhooksApi* | [**AccountsUsingGET**](docs/WebhooksApi.md#accountsusingget) | **Get** /unsentlist/va-deposit-transaction | 振込入金口座未送信明細取得
+*WebhooksApi* | [**Subscribe**](docs/WebhooksApi.md#subscribe) | **Post** /subscribe | 通知配信制御
 *WebhooksApi* | [**SubscribeStatusUsingGET**](docs/WebhooksApi.md#subscribestatususingget) | **Get** /subscribe-status | 通知配信状態取得
 
 ## Documentation For Models
@@ -40,7 +39,17 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Authorization
 
-## bearerAuth
+## basicAuth
+- **Type**: HTTP basic authentication
+
+Example
+```golang
+auth := context.WithValue(context.Background(), sw.ContextBasicAuth, sw.BasicAuth{
+	UserName: "username",
+	Password: "password",
+})
+r, err := client.Service.Operation(auth, args)
+```
 
 ## Author
 
