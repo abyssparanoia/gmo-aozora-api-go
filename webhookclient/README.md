@@ -31,6 +31,7 @@ Class | Method | HTTP request | Description
  - [ErrorResponse](docs/ErrorResponse.md)
  - [EventType](docs/EventType.md)
  - [SubscribeRequestBody](docs/SubscribeRequestBody.md)
+ - [SubscribeResponse](docs/SubscribeResponse.md)
  - [SubscribeStatus](docs/SubscribeStatus.md)
  - [SubscribeStatusResponse](docs/SubscribeStatusResponse.md)
  - [VaDepositTransactionMessage](docs/VaDepositTransactionMessage.md)

@@ -8,7 +8,7 @@
  */
 package swagger
 
-type SubscribeStatus struct {
-	EventType       string `json:"eventType"`
-	SubscribeStatus string `json:"subscribeStatus"`
+type SubscribeResponse struct {
+	// イベント種別 半角英数記号文字 va-deposit-transaction = 振込入金口座への入金明細通知
+	EventTypes string `json:"eventTypes"`
 }

@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**SubscribeStatusUsingGET**](WebhooksApi.md#SubscribeStatusUsingGET) | **Get** /subscribe-status | 通知配信状態取得
 
 # **AccountsUsing**
-> AccountsUsing(ctx, body, xAccessToken)
+> SubscribeResponse AccountsUsing(ctx, body, xAccessToken)
 通知配信制御
 
 指定したイベント通知に対応するイベント通知（WebHook）の配信開始、配信停止をコントロールします
@@ -24,11 +24,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**SubscribeResponse**](SubscribeResponse.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
