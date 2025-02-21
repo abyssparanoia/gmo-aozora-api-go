@@ -8,6 +8,6 @@
  */
 package swagger
 
-type VaDepositTransactionUnsentResponse struct {
-	Messages []VaDepositTransactionMessage `json:"messages"`
+type SubscribeStatusResponse struct {
+	SubscribeStatuses []SubscribeStatus `json:"subscribeStatuses"`
 }

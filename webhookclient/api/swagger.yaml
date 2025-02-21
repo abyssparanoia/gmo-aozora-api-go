@@ -1,470 +1,971 @@
-swagger: "2.0"
+openapi: 3.0.1
 info:
-  description: "<p>Ph2.5向けに作成したもの</p>\n"
-  version: "1.1.10"
-  title: "GMO Aozora Net Bank Open API"
-host: "api.gmo-aozora.com"
-basePath: "/ganb/api/webhooks/v1"
+  title: GMO Aozora Net Bank Open API
+  description: |
+    <p>Ph2.5向けに作成したもの</p>
+  version: 1.1.10
+servers:
+  - url: https://api.gmo-aozora.com/ganb/api/webhooks/v1
 tags:
-  - name: "webhooks"
-    description: "イベント通知"
-  - name: "notification messages"
-    description: "通知メッセージ"
-schemes:
-  - "https"
+  - name: webhooks
+    description: イベント通知
+  - name: notification messages
+    description: 通知メッセージ
 paths:
   /subscribe:
     post:
       tags:
-        - "webhooks"
-      summary: "通知配信制御"
-      description: "指定したイベント通知に対応するイベント通知（WebHook）の配信開始、配信停止をコントロールします"
-      operationId: "accountsUsing"
-      consumes:
-        - "application/json;charset=UTF-8"
-      produces:
-        - "application/json;charset=UTF-8"
+        - webhooks
+      summary: 通知配信制御
+      description: 指定したイベント通知に対応するイベント通知（WebHook）の配信開始、配信停止をコントロールします
+      operationId: accountsUsing
       parameters:
-        - name: "Authorization"
-          in: "header"
-          description: "認証情報\n銀行システムが配信先システムに発行した、クライアントIDとクライアントシーレットを\":\"（コロン）で連結し、Base64エンコードした値を設定\nminLength: ‐\nmaxLength: ‐\n"
+        - name: Authorization
+          in: header
+          description: |
+            認証情報
+            銀行システムが配信先システムに発行した、クライアントIDとクライアントシーレットを":"（コロン）で連結し、Base64エンコードした値を設定
+            minLength: ‐
+            maxLength: ‐
           required: true
-          type: "string"
-          x-exportParamName: "Authorization"
-        - in: "body"
-          name: "body"
-          description: "HTTPリクエストボディ"
-          required: true
+          style: simple
+          explode: false
           schema:
-            $ref: "#/definitions/SubscribeRequestBody"
-          x-exportParamName: "Body"
+            type: string
+            x-exportParamName: Authorization
+          x-exportParamName: Authorization
+      requestBody:
+        description: HTTPリクエストボディ
+        content:
+          application/json;charset=UTF-8:
+            schema:
+              $ref: "#/components/schemas/SubscribeRequestBody"
+        required: true
+        x-exportParamName: Body
       responses:
-        200:
-          description: "OK"
-        400:
-          description: "Bad Request"
-          schema:
-            $ref: "#/definitions/ErrorResponse"
-        401:
-          description: "Unauthorized"
-          schema:
-            $ref: "#/definitions/ErrorResponse"
-        403:
-          description: "Forbidden"
-          schema:
-            $ref: "#/definitions/ErrorResponse"
-        404:
-          description: "Not found"
-          schema:
-            $ref: "#/definitions/ErrorResponse"
-        405:
-          description: "Method Not Allowed"
-          schema:
-            $ref: "#/definitions/ErrorResponse"
-        406:
-          description: "Not Acceptable"
-          schema:
-            $ref: "#/definitions/ErrorResponse"
-        411:
-          description: "Length Required"
-          schema:
-            $ref: "#/definitions/ErrorResponse"
-        412:
-          description: "Precondition Failed"
-          schema:
-            $ref: "#/definitions/ErrorResponse"
-        415:
-          description: "Unsupported media type"
-          schema:
-            $ref: "#/definitions/ErrorResponse"
-        500:
-          description: "Internal Server Error"
-          schema:
-            $ref: "#/definitions/ErrorResponse"
-        503:
-          description: "Service Unavailable"
-          schema:
-            $ref: "#/definitions/ErrorResponse"
-        504:
-          description: "Gateway Timeout"
-          schema:
-            $ref: "#/definitions/ErrorResponse"
+        "200":
+          description: OK
+          content: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "401":
+          description: Unauthorized
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "403":
+          description: Forbidden
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "404":
+          description: Not found
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "405":
+          description: Method Not Allowed
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "406":
+          description: Not Acceptable
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "411":
+          description: Length Required
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "412":
+          description: Precondition Failed
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "415":
+          description: Unsupported media type
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "503":
+          description: Service Unavailable
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "504":
+          description: Gateway Timeout
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
       deprecated: false
       x-code-samples:
-        - lang: "cURL"
+        - lang: cURL
           source: "curl -X POST \\\n  https://api.gmo-aozora.com/ganb/api/webhooks/v1/subscribe \\\n  -H 'accept: application/json;charset=UTF-8' \\\n  -H 'content-type: application/json' \\\n  -H 'x-access-token: your access token' \\\n  -d '{\n    \"subscribeStatus\" : \"1\",\n    \"eventTypes\" : [\n      {\n        \"eventType\" : \"va-deposit-transaction\"\n      } \n    ]\n  }'\n"
-        - lang: "Ruby"
-          source: "require 'uri' require 'net/http'\nurl = URI(\"https://api.gmo-aozora.com/ganb/api/webhooks/v1/subscribe\")\nhttp = Net::HTTP.new(url.host, url.port) http.use_ssl = true http.verify_mode = OpenSSL::SSL::VERIFY_NONE\nrequest = Net::HTTP::Post.new(url) request[\"Authorization\"] = 'your authorization' request[\"content-type\"] = 'application/json' request[\"accept\"] = 'application/json;charset=UTF-8'\nrequest.body = \"{\\\"subscribeStatus\\\": \\\"1\\\",\\\"eventTypes\\\": [{\\\"eventType\\\": \\\"va-deposit-transaction\\\"}]}\"\nresponse = http.request(request) puts response.read_body\n"
-        - lang: "Python"
-          source: "import http.client\nconn = http.client.HTTPSConnection(\"api.gmo-aozora.com\")\npayload = \"{\\\"subscribeStatus\\\": \\\"1\\\",\\\"eventTypes\\\": [{\\\"eventType\\\": \\\"va-deposit-transaction\\\"}]}\"\nheaders = {\n    'Authorization': \"your autorization\",\n    'content-type': \"application/json\",\n    'accept': \"application/json;charset=UTF-8\"\n    }\n\nconn.request(\"POST\", \"/ganb/api/webhooks/v1/subscribe\", payload, headers)\nres = conn.getresponse() data = res.read() print(data.decode(\"utf-8\"))\n"
-        - lang: "PHP"
-          source: "<?php\n\n$curl = curl_init();\n\ncurl_setopt_array($curl, array(\n  CURLOPT_URL => \"https://api.gmo-aozora.com/ganb/api/webhooks/v1/subscribe\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"POST\",\n  CURLOPT_POSTFIELDS => \"{\\\"subscribeStatus\\\": \\\"1\\\",\\\"eventTypes\\\": [{\\\"eventType\\\": \\\"va-deposit-transaction\\\"}]}\",\n  CURLOPT_HTTPHEADER => array(\n    \"accept: application/json;charset=UTF-8\",\n    \"content-type: application/json\",\n    \"Authorization: your authorization\"\n  ),\n));\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}\n"
-        - lang: "Java"
-          source: "OkHttpClient client = new OkHttpClient(); MediaType mediaType = MediaType.parse(\"application/json\");\nRequestBody body = RequestBody.create(mediaType, \"{\\\"subscribeStatus\\\": \\\"1\\\",\\\"eventTypes\\\": [{\\\"eventType\\\": \\\"va-deposit-transaction\\\"}]}\");\nRequest request = new Request.Builder()\n  .url(\"https://api.gmo-aozora.com/ganb/api/webhooks/v1/subscribe\")\n  .post(body)\n  .addHeader(\"Authorization\", \"your authorization\")\n  .addHeader(\"content-type\", \"application/json\")\n  .addHeader(\"accept\", \"application/json;charset=UTF-8\")\n  .build();\n\nResponse response = client.newCall(request).execute();\n"
-        - lang: "Node"
+        - lang: Ruby
+          source: |
+            require 'uri' require 'net/http'
+            url = URI("https://api.gmo-aozora.com/ganb/api/webhooks/v1/subscribe")
+            http = Net::HTTP.new(url.host, url.port) http.use_ssl = true http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+            request = Net::HTTP::Post.new(url) request["Authorization"] = 'your authorization' request["content-type"] = 'application/json' request["accept"] = 'application/json;charset=UTF-8'
+            request.body = "{\"subscribeStatus\": \"1\",\"eventTypes\": [{\"eventType\": \"va-deposit-transaction\"}]}"
+            response = http.request(request) puts response.read_body
+        - lang: Python
+          source: |
+            import http.client
+            conn = http.client.HTTPSConnection("api.gmo-aozora.com")
+            payload = "{\"subscribeStatus\": \"1\",\"eventTypes\": [{\"eventType\": \"va-deposit-transaction\"}]}"
+            headers = {
+                'Authorization': "your autorization",
+                'content-type': "application/json",
+                'accept': "application/json;charset=UTF-8"
+                }
+
+            conn.request("POST", "/ganb/api/webhooks/v1/subscribe", payload, headers)
+            res = conn.getresponse() data = res.read() print(data.decode("utf-8"))
+        - lang: PHP
+          source: |
+            <?php
+
+            $curl = curl_init();
+
+            curl_setopt_array($curl, array(
+              CURLOPT_URL => "https://api.gmo-aozora.com/ganb/api/webhooks/v1/subscribe",
+              CURLOPT_RETURNTRANSFER => true,
+              CURLOPT_ENCODING => "",
+              CURLOPT_MAXREDIRS => 10,
+              CURLOPT_TIMEOUT => 30,
+              CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+              CURLOPT_CUSTOMREQUEST => "POST",
+              CURLOPT_POSTFIELDS => "{\"subscribeStatus\": \"1\",\"eventTypes\": [{\"eventType\": \"va-deposit-transaction\"}]}",
+              CURLOPT_HTTPHEADER => array(
+                "accept: application/json;charset=UTF-8",
+                "content-type: application/json",
+                "Authorization: your authorization"
+              ),
+            ));
+
+            $response = curl_exec($curl);
+            $err = curl_error($curl);
+
+            curl_close($curl);
+
+            if ($err) {
+              echo "cURL Error #:" . $err;
+            } else {
+              echo $response;
+            }
+        - lang: Java
+          source: |
+            OkHttpClient client = new OkHttpClient(); MediaType mediaType = MediaType.parse("application/json");
+            RequestBody body = RequestBody.create(mediaType, "{\"subscribeStatus\": \"1\",\"eventTypes\": [{\"eventType\": \"va-deposit-transaction\"}]}");
+            Request request = new Request.Builder()
+              .url("https://api.gmo-aozora.com/ganb/api/webhooks/v1/subscribe")
+              .post(body)
+              .addHeader("Authorization", "your authorization")
+              .addHeader("content-type", "application/json")
+              .addHeader("accept", "application/json;charset=UTF-8")
+              .build();
+
+            Response response = client.newCall(request).execute();
+        - lang: Node
           source: "var request = require(\"request\");\n\nvar options = { method: 'POST',\n  url: 'https://api.gmo-aozora.com/ganb/api/webhooks/v1/subscribe',\n  headers: \n   { accept: 'application/json;charset=UTF-8',\n     'content-type': 'application/json',\n     'Authorization': 'your authorization' },\n  body: \n   { subscribeStatus: '1',\n     eventTypes: [{\n       eventType: 'va-deposit-transaction'\n     }]\n   },\n  json: true };\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});\n"
-        - lang: "Go"
-          source: "package main\n\nimport (\n  \"fmt\"\n  \"strings\"\n  \"net/http\"\n  \"io/ioutil\"\n)\n\nfunc main() {\n\n  url := \"https://stg-api.gmo-aozora.com/ganb/api/webhooks/v1/subscribe\"\n\n  payload := strings.NewReader(\"{\\\"subscribeStatus\\\": \\\"1\\\",\\\"eventTypes\\\": [{\\\"eventType\\\": \\\"va-deposit-transaction\\\"}]}\")\n\n  req, _ := http.NewRequest(\"POST\", url, payload)\n\n  req.Header.Add(\"Authorization\", \"your authorization\")\n  req.Header.Add(\"content-type\", \"application/json\")\n  req.Header.Add(\"accept\", \"application/json;charset=UTF-8\")\n\n  res, _ := http.DefaultClient.Do(req)\n\n  defer res.Body.Close()\n  body, _ := ioutil.ReadAll(res.Body)\n\n  fmt.Println(res)\n  fmt.Println(string(body))\n\n}\n"
-        - lang: "Swift"
-          source: "import Foundation\nlet headers = [\n  \"Authorization\": \"your authorization\",\n  \"content-type\": \"application/json\",\n  \"accept\": \"application/json;charset=UTF-8\"\n] let parameters = [\n  \"subscribeStatus\": \"1\",\n  \"eventTypes\": [ {\n    \"eventType\": \"va-deposit-transaction\"\n  } ]\n] as [String : Any]\nlet postData = JSONSerialization.data(withJSONObject: parameters, options: [])\nlet request = NSMutableURLRequest(url: NSURL(string: \"https://stg-api.gmo-aozora.com/ganb/api/webhooks/v1/subscribe\")! as URL,\n                                        cachePolicy: .useProtocolCachePolicy,\n                                    timeoutInterval: 10.0)\nrequest.httpMethod = \"POST\" request.allHTTPHeaderFields = headers request.httpBody = postData as Data\nlet session = URLSession.shared let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in\n  if (error != nil) {\n    print(error)\n  } else {\n    let httpResponse = response as? HTTPURLResponse\n    print(httpResponse)\n  }\n})\ndataTask.resume()\n"
+        - lang: Go
+          source: |
+            package main
+
+            import (
+              "fmt"
+              "strings"
+              "net/http"
+              "io/ioutil"
+            )
+
+            func main() {
+
+              url := "https://stg-api.gmo-aozora.com/ganb/api/webhooks/v1/subscribe"
+
+              payload := strings.NewReader("{\"subscribeStatus\": \"1\",\"eventTypes\": [{\"eventType\": \"va-deposit-transaction\"}]}")
+
+              req, _ := http.NewRequest("POST", url, payload)
+
+              req.Header.Add("Authorization", "your authorization")
+              req.Header.Add("content-type", "application/json")
+              req.Header.Add("accept", "application/json;charset=UTF-8")
+
+              res, _ := http.DefaultClient.Do(req)
+
+              defer res.Body.Close()
+              body, _ := ioutil.ReadAll(res.Body)
+
+              fmt.Println(res)
+              fmt.Println(string(body))
+
+            }
+        - lang: Swift
+          source: |
+            import Foundation
+            let headers = [
+              "Authorization": "your authorization",
+              "content-type": "application/json",
+              "accept": "application/json;charset=UTF-8"
+            ] let parameters = [
+              "subscribeStatus": "1",
+              "eventTypes": [ {
+                "eventType": "va-deposit-transaction"
+              } ]
+            ] as [String : Any]
+            let postData = JSONSerialization.data(withJSONObject: parameters, options: [])
+            let request = NSMutableURLRequest(url: NSURL(string: "https://stg-api.gmo-aozora.com/ganb/api/webhooks/v1/subscribe")! as URL,
+                                                    cachePolicy: .useProtocolCachePolicy,
+                                                timeoutInterval: 10.0)
+            request.httpMethod = "POST" request.allHTTPHeaderFields = headers request.httpBody = postData as Data
+            let session = URLSession.shared let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+              if (error != nil) {
+                print(error)
+              } else {
+                let httpResponse = response as? HTTPURLResponse
+                print(httpResponse)
+              }
+            })
+            dataTask.resume()
+      x-codegen-request-body-name: body
+  /subscribe-status:
+    get:
+      tags:
+        - webhooks
+      summary: 通知配信状態取得
+      description: 各種イベント通知（Webhook）の配信状態を取得できます。
+      operationId: subscribeStatusUsingGET
+      parameters:
+        - name: Authorization
+          in: header
+          description: |
+            認証情報
+            銀行システムが配信先システムに発行した、クライアントIDとクライアントシーレットを":"（コロン）で連結し、Base64エンコードした値を設定
+            minLength: ‐
+            maxLength: ‐
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+            x-exportParamName: Authorization
+          x-exportParamName: Authorization
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: "#/components/schemas/SubscribeStatusResponse"
+        "400":
+          description: Bad Request
+          content: {}
   /unsentlist/va-deposit-transaction:
     get:
       tags:
-        - "webhooks"
-      summary: "振込入金口座未送信明細取得"
-      description: "配信停止状態となっている場合、本APIを利用することで未送信または送信エラーとなっている、振込入金口座の入金明細を一括で取得することができます\n通常、未送信または送信エラーとなっている明細は配信再開後に通知されますが、本APIで取得された明細は配信済みとなるため、配信再開後には通知されません\n未送信または送信エラーとなっている明細が無い場合は404 Not Foundを返却します <p><font color=\"red\">※法人口座および個人事業主口座のみ対象となり、個人口座は対象外となります</font></p>\n<h4 style='margin-top:30px; border-left: solid 4px #1B2F48; padding: 0.1em 0.5em; color:#1B2F48;'>詳細説明</h4>\n<div style='margin:10px;'>\n  <p style='font-weight:bold; color:#616161;'>取得上限件数</p>\n  <p style='padding-left:20px;'>500件</p>\n  <p style='padding-left:20px;'>取得できる明細数が500に満たないときは取得できる明細のみを返却します</p>\n  <p style='padding-left:20px;'>取得できた明細数が500件の場合、まだ取得できる明細が残っている可能性がありますので、</p>\n  <p style='padding-left:20px;'>「404：Not Found」が返却されるまで、リクエストを繰り返してください。</p>\n</div>\n"
-      operationId: "accountsUsingGET"
-      consumes:
-        - "application/json;charset=UTF-8"
-      produces:
-        - "application/json;charset=UTF-8"
+        - webhooks
+      summary: 振込入金口座未送信明細取得
+      description: |
+        配信停止状態となっている場合、本APIを利用することで未送信または送信エラーとなっている、振込入金口座の入金明細を一括で取得することができます
+        通常、未送信または送信エラーとなっている明細は配信再開後に通知されますが、本APIで取得された明細は配信済みとなるため、配信再開後には通知されません
+        未送信または送信エラーとなっている明細が無い場合は404 Not Foundを返却します <p><font color="red">※法人口座および個人事業主口座のみ対象となり、個人口座は対象外となります</font></p>
+        <h4 style='margin-top:30px; border-left: solid 4px #1B2F48; padding: 0.1em 0.5em; color:#1B2F48;'>詳細説明</h4>
+        <div style='margin:10px;'>
+          <p style='font-weight:bold; color:#616161;'>取得上限件数</p>
+          <p style='padding-left:20px;'>500件</p>
+          <p style='padding-left:20px;'>取得できる明細数が500に満たないときは取得できる明細のみを返却します</p>
+          <p style='padding-left:20px;'>取得できた明細数が500件の場合、まだ取得できる明細が残っている可能性がありますので、</p>
+          <p style='padding-left:20px;'>「404：Not Found」が返却されるまで、リクエストを繰り返してください。</p>
+        </div>
+      operationId: accountsUsingGET
       parameters:
-        - name: "Authorization"
-          in: "header"
-          description: "認証情報\n銀行システムが配信先システムに発行した、クライアントIDとクライアントシーレットを\":\"（コロン）で連結し、Base64エンコードした値を設定\nminLength: ‐\nmaxLength: ‐\n"
+        - name: Authorization
+          in: header
+          description: |
+            認証情報
+            銀行システムが配信先システムに発行した、クライアントIDとクライアントシーレットを":"（コロン）で連結し、Base64エンコードした値を設定
+            minLength: ‐
+            maxLength: ‐
           required: true
-          type: "string"
-          x-exportParamName: "Authorization"
+          style: simple
+          explode: false
+          schema:
+            type: string
+            x-exportParamName: Authorization
+          x-exportParamName: Authorization
       responses:
-        200:
-          description: "OK"
-          examples:
+        "200":
+          description: OK
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: "#/components/schemas/vaDepositTransactionUnsentResponse"
             application/json:
-              messages:
-                - messageId: "0000000000123456789"
-                  timestamp: "2018-11-09T17:59:59+09:00"
-                  account:
-                    - raId: "201011234567"
-                      raBranchCode: "201"
-                      raBranchNameKana: "ﾋﾞｼﾞﾈｽ"
-                      raAccountNumber: "1234567"
-                      raHolderName: "ＧＭＯ　あおぞら　太郎"
-                      baseDate: "2018-11-09"
-                      baseTime: "17:59:59+09:00"
-                  vaTransaction:
-                    - vaId: "5021099622"
-                      transactionDate: "2018-11-09"
-                      valueDate: "2018-11-09"
-                      vaBranchCode: "502"
-                      vaBranchNameKana: "ｱｼﾞｻｲ"
-                      vaAccountNumber: "1099622"
-                      vaAccountNameKana: "ｱｵｿﾞﾗ ﾀﾛｳﾃｽﾄﾆﾕｳｷﾝｸﾞﾁ"
-                      depositAmount: "10000"
-                      remitterNameKana: "ﾃｽﾄ ﾀﾛｳ"
-                      paymentBankName: "ｱｵｿﾞﾗｷﾞﾝｺｳ"
-                      paymentBranchName: "ﾎﾝﾃﾝ"
-                      partnerName: "GMOあおぞらネット銀行"
-                      remarks: "振込 ｲｰﾃﾞｲｰｱｲ テスト　タロウ あじさい支店 1036971"
-                      itemKey: "20181109175959112541"
-          schema:
-            $ref: "#/definitions/vaDepositTransactionUnsentResponse"
-        400:
-          description: "Bad Request"
-          schema:
-            $ref: "#/definitions/ErrorResponse"
-        401:
-          description: "Unauthorized"
-          schema:
-            $ref: "#/definitions/ErrorResponse"
-        403:
-          description: "Forbidden"
-          schema:
-            $ref: "#/definitions/ErrorResponse"
-        404:
-          description: "Not found"
-          schema:
-            $ref: "#/definitions/ErrorResponse"
-        405:
-          description: "Method Not Allowed"
-          schema:
-            $ref: "#/definitions/ErrorResponse"
-        406:
-          description: "Not Acceptable"
-          schema:
-            $ref: "#/definitions/ErrorResponse"
-        411:
-          description: "Length Required"
-          schema:
-            $ref: "#/definitions/ErrorResponse"
-        412:
-          description: "Precondition Failed"
-          schema:
-            $ref: "#/definitions/ErrorResponse"
-        415:
-          description: "Unsupported media type"
-          schema:
-            $ref: "#/definitions/ErrorResponse"
-        500:
-          description: "Internal Server Error"
-          schema:
-            $ref: "#/definitions/ErrorResponse"
-        503:
-          description: "Service Unavailable"
-          schema:
-            $ref: "#/definitions/ErrorResponse"
-        504:
-          description: "Gateway Timeout"
-          schema:
-            $ref: "#/definitions/ErrorResponse"
+              example:
+                messages:
+                  - messageId: "0000000000123456789"
+                    timestamp: 2018-11-09T17:59:59+09:00
+                    account:
+                      - raId: "201011234567"
+                        raBranchCode: "201"
+                        raBranchNameKana: ﾋﾞｼﾞﾈｽ
+                        raAccountNumber: "1234567"
+                        raHolderName: ＧＭＯ　あおぞら　太郎
+                        baseDate: 2018-11-09
+                        baseTime: 17:59:59+09:00
+                    vaTransaction:
+                      - vaId: "5021099622"
+                        transactionDate: 2018-11-09
+                        valueDate: 2018-11-09
+                        vaBranchCode: "502"
+                        vaBranchNameKana: ｱｼﾞｻｲ
+                        vaAccountNumber: "1099622"
+                        vaAccountNameKana: ｱｵｿﾞﾗ ﾀﾛｳﾃｽﾄﾆﾕｳｷﾝｸﾞﾁ
+                        depositAmount: "10000"
+                        remitterNameKana: ﾃｽﾄ ﾀﾛｳ
+                        paymentBankName: ｱｵｿﾞﾗｷﾞﾝｺｳ
+                        paymentBranchName: ﾎﾝﾃﾝ
+                        partnerName: GMOあおぞらネット銀行
+                        remarks: 振込 ｲｰﾃﾞｲｰｱｲ テスト　タロウ あじさい支店 1036971
+                        itemKey: "20181109175959112541"
+        "400":
+          description: Bad Request
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "401":
+          description: Unauthorized
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "403":
+          description: Forbidden
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "404":
+          description: Not found
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "405":
+          description: Method Not Allowed
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "406":
+          description: Not Acceptable
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "411":
+          description: Length Required
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "412":
+          description: Precondition Failed
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "415":
+          description: Unsupported media type
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "503":
+          description: Service Unavailable
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "504":
+          description: Gateway Timeout
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
       deprecated: false
       x-code-samples:
-        - lang: "cURL"
-          source: "curl -X GET \\\n  https://api.gmo-aozora.com/ganb/api/webhooks/v1/unsentlist/va-deposit-transaction \\\n  -H 'accept: application/json;charset=UTF-8' \\\n  -H 'Authorization: your authorization'\n"
-        - lang: "Ruby"
-          source: "require 'uri' require 'net/http'\nurl = URI(\"https://api.gmo-aozora.com/ganb/api/webhooks/v1/unsentlist/va-deposit-transaction\")\nhttp = Net::HTTP.new(url.host, url.port) http.use_ssl = true http.verify_mode = OpenSSL::SSL::VERIFY_NONE\nrequest = Net::HTTP::Get.new(url) request[\"Authorization\"] = 'your authorization' request[\"accept\"] = 'application/json;charset=UTF-8'\nresponse = http.request(request) puts response.read_body\n"
-        - lang: "Python"
-          source: "import http.client\nconn = http.client.HTTPSConnection(\"api.gmo-aozora.com\")\nheaders = {\n    'Authorization': \"your authorization\",\n    'accept': \"application/json;charset=UTF-8\"\n    }\nconn.request(\"GET\", \"/ganb/api/webhooks/v1/unsentlist/va-deposit-transaction\", headers=headers)\nres = conn.getresponse() data = res.read()\nprint(data.decode(\"utf-8\"))\n"
-        - lang: "PHP"
-          source: "<?php\n\n$curl = curl_init();\n\ncurl_setopt_array($curl, array(\n  CURLOPT_URL => \"https://api.gmo-aozora.com/ganb/api/webhooks/v1/unsentlist/va-deposit-transaction\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"GET\",\n  CURLOPT_HTTPHEADER => array(\n    \"accept: application/json;charset=UTF-8\",\n    \"Authorization: your authorization\"\n  ),\n));\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}\n"
-        - lang: "Java"
+        - lang: cURL
+          source: |
+            curl -X GET \
+              https://api.gmo-aozora.com/ganb/api/webhooks/v1/unsentlist/va-deposit-transaction \
+              -H 'accept: application/json;charset=UTF-8' \
+              -H 'Authorization: your authorization'
+        - lang: Ruby
+          source: |
+            require 'uri' require 'net/http'
+            url = URI("https://api.gmo-aozora.com/ganb/api/webhooks/v1/unsentlist/va-deposit-transaction")
+            http = Net::HTTP.new(url.host, url.port) http.use_ssl = true http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+            request = Net::HTTP::Get.new(url) request["Authorization"] = 'your authorization' request["accept"] = 'application/json;charset=UTF-8'
+            response = http.request(request) puts response.read_body
+        - lang: Python
+          source: |
+            import http.client
+            conn = http.client.HTTPSConnection("api.gmo-aozora.com")
+            headers = {
+                'Authorization': "your authorization",
+                'accept': "application/json;charset=UTF-8"
+                }
+            conn.request("GET", "/ganb/api/webhooks/v1/unsentlist/va-deposit-transaction", headers=headers)
+            res = conn.getresponse() data = res.read()
+            print(data.decode("utf-8"))
+        - lang: PHP
+          source: |
+            <?php
+
+            $curl = curl_init();
+
+            curl_setopt_array($curl, array(
+              CURLOPT_URL => "https://api.gmo-aozora.com/ganb/api/webhooks/v1/unsentlist/va-deposit-transaction",
+              CURLOPT_RETURNTRANSFER => true,
+              CURLOPT_ENCODING => "",
+              CURLOPT_MAXREDIRS => 10,
+              CURLOPT_TIMEOUT => 30,
+              CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+              CURLOPT_CUSTOMREQUEST => "GET",
+              CURLOPT_HTTPHEADER => array(
+                "accept: application/json;charset=UTF-8",
+                "Authorization: your authorization"
+              ),
+            ));
+
+            $response = curl_exec($curl);
+            $err = curl_error($curl);
+
+            curl_close($curl);
+
+            if ($err) {
+              echo "cURL Error #:" . $err;
+            } else {
+              echo $response;
+            }
+        - lang: Java
           source: "OkHttpClient client = new OkHttpClient();\n\nRequest request = new Request.Builder()\n  .url(\"https://api.gmo-aozora.com/ganb/api/webhooks/v1/unsentlist/va-deposit-transaction\")\n  .get()\n  .addHeader(\"Authorization\", \"your authorization\")\n  .addHeader(\"accept\", \"application/json;charset=UTF-8\")\n  .build();\n  \nResponse response = client.newCall(request).execute();\n"
-        - lang: "Node"
+        - lang: Node
           source: "var request = require(\"request\");\n\nvar options = { method: 'GET',\n  url: 'https://https://api.gmo-aozora.com/ganb/api/webhooks/v1/unsentlist/va-deposit-transaction',\n  headers: \n   { accept: 'application/json;charset=UTF-8',\n     'Authorization': 'your authorization' } };\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});\n"
-        - lang: "Go"
-          source: "package main\n\nimport (\n  \"fmt\"\n  \"net/http\"\n  \"io/ioutil\"\n)\n\nfunc main() {\n\n  url := \"https://api.gmo-aozora.com/ganb/api/webhooks/v1/unsentlist/va-deposit-transaction\"\n\n  req, _ := http.NewRequest(\"GET\", url, nil)\n\n  req.Header.Add(\"Authorization\", \"your authorization\")\n  req.Header.Add(\"accept\", \"application/json;charset=UTF-8\")\n\n  res, _ := http.DefaultClient.Do(req)\n\n  defer res.Body.Close()\n  body, _ := ioutil.ReadAll(res.Body)\n\n  fmt.Println(res)\n  fmt.Println(string(body))\n\n}\n"
-        - lang: "Swift"
+        - lang: Go
+          source: |
+            package main
+
+            import (
+              "fmt"
+              "net/http"
+              "io/ioutil"
+            )
+
+            func main() {
+
+              url := "https://api.gmo-aozora.com/ganb/api/webhooks/v1/unsentlist/va-deposit-transaction"
+
+              req, _ := http.NewRequest("GET", url, nil)
+
+              req.Header.Add("Authorization", "your authorization")
+              req.Header.Add("accept", "application/json;charset=UTF-8")
+
+              res, _ := http.DefaultClient.Do(req)
+
+              defer res.Body.Close()
+              body, _ := ioutil.ReadAll(res.Body)
+
+              fmt.Println(res)
+              fmt.Println(string(body))
+
+            }
+        - lang: Swift
           source: "import Foundation\n\nlet headers = [\n  \"Authorization\": \"your authorization\",\n  \"accept\": \"application/json;charset=UTF-8\"\n]\n\nlet request = NSMutableURLRequest(url: NSURL(string: \"https://api.gmo-aozora.com/ganb/api/webhooks/v1/unsentlist/va-deposit-transaction\")! as URL,\n                                        cachePolicy: .useProtocolCachePolicy,\n                                    timeoutInterval: 10.0)\n                                    \nrequest.httpMethod = \"GET\" request.allHTTPHeaderFields = headers\nlet session = URLSession.shared let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response,error) -> Void in\n  if (error != nil) {\n    print(error)\n  } else {\n    let httpResponse = response as? HTTPURLResponse\n    print(httpResponse)\n  }\n})\ndataTask.resume()\n"
-definitions:
-  EventType:
-    type: "object"
-    required:
-      - "eventType"
-    properties:
-      eventType:
-        type: "string"
-        example: "va-deposit-transaction"
-        description: "イベント種別\n半角英数記号文字\nva-deposit-transaction = 振込入金口座への入金明細通知\n"
-        minLength: 1
-        maxLength: 128
-    example:
-      eventType: "va-deposit-transaction"
-  Account:
-    type: "object"
-    required:
-      - "baseDate"
-      - "baseTime"
-      - "raAccountNumber"
-      - "raBranchCode"
-      - "raBranchNameKana"
-      - "raHolderName"
-      - "raId"
-    properties:
-      raId:
-        type: "string"
-        example: "201011234567"
-        description: "入金口座ID\n半角数字\n入金先の口座を識別するID\n"
-        minLength: 12
-        maxLength: 29
-      raBranchCode:
-        type: "string"
-        example: "201"
-        description: "入金口座　支店コード\n半角数字\n"
-        minLength: 3
-        maxLength: 3
-      raBranchNameKana:
-        type: "string"
-        example: "ﾋﾞｼﾞﾈｽ"
-        description: "半角文字\n"
-        minLength: 1
-        maxLength: 15
-      raAccountNumber:
-        type: "string"
-        example: "1234567"
-        description: "半角数字\n"
-        minLength: 7
-        maxLength: 7
-      raHolderName:
-        type: "string"
-        example: "ＧＭＯ　あおぞら　太郎"
-        description: "全角文字\n"
-        minLength: 1
-        maxLength: 48
-      baseDate:
-        type: "string"
-        example: "2018-08-10"
-        description: "基準日\n半角文字\n応答日付、もしくは入金明細の基準日を示す。\nYYYY-MM-DD形式\n"
-        minLength: 10
-        maxLength: 10
-      baseTime:
-        type: "string"
-        example: "10:00:00+09:00"
-        description: "基準時刻\n半角文字\n応答時刻、もしくは入金明細の基準時刻を示す。 \nISO8601 時差(offset)も表記\nHH:MM:SS+09:00形式\n"
-        minLength: 14
-        maxLength: 14
-    description: "入金口座情報\n"
-  VaTransaction:
-    type: "object"
-    required:
-      - "depositAmount"
-      - "itemKey"
-      - "partnerName"
-      - "paymentBankName"
-      - "paymentBranchName"
-      - "remitterNameKana"
-      - "transactionDate"
-      - "vaAccountNameKana"
-      - "vaAccountNumber"
-      - "vaBranchCode"
-      - "vaBranchNameKana"
-      - "vaId"
-      - "valueDate"
-    properties:
-      vaId:
-        type: "string"
-        example: "5021099622"
-        description: "振込入金口座ID\n半角数字\n振込入金口座を識別するID\n"
-        minLength: 10
-        maxLength: 10
-      transactionDate:
-        type: "string"
-        example: "2018-08-02"
-        description: "取引日\n半角文字\nYYYY-MM-DD形式\n"
-        minLength: 10
-        maxLength: 10
-      valueDate:
-        type: "string"
-        example: "2018-08-02"
-        description: "起算日\n半角文字\nYYYY-MM-DD形式\n"
-        minLength: 10
-        maxLength: 10
-      vaBranchCode:
-        type: "string"
-        example: "502"
-        description: "支店コード\n半角数字\n"
-        minLength: 3
-        maxLength: 3
-      vaBranchNameKana:
-        type: "string"
-        example: "ｱｼﾞｻｲ"
-        description: "支店名カナ\n半角文字\n"
-        minLength: 1
-        maxLength: 15
-      vaAccountNumber:
-        type: "string"
-        example: "1099622"
-        description: "口座番号\n半角数字\n"
-        minLength: 7
-        maxLength: 7
-      vaAccountNameKana:
-        type: "string"
-        example: "ｱｵｿﾞﾗ ﾀﾛｳﾃｽﾄﾆﾕｳｷﾝｸﾞﾁ"
-        description: "口座名義カナ\n半角文字\n"
-        minLength: 1
-        maxLength: 40
-      depositAmount:
-        type: "string"
-        example: "10000"
-        description: "入金金額\n半角数字\n"
-        minLength: 1
-        maxLength: 20
-      remitterNameKana:
-        type: "string"
-        example: "ﾃｽﾄ ﾀﾛｳ"
-        description: "振込依頼人名カナ\n半角文字\n"
-        minLength: 1
-        maxLength: 48
-      paymentBankName:
-        type: "string"
-        example: "ｱｵｿﾞﾗｷﾞﾝｺｳ"
-        description: "仕向金融機関名カナ\n半角文字\n"
-        minLength: 1
-        maxLength: 30
-      paymentBranchName:
-        type: "string"
-        example: "ﾎﾝﾃﾝ"
-        description: "仕向支店名カナ\n半角文字\n"
-        minLength: 1
-        maxLength: 15
-      partnerName:
-        type: "string"
-        example: "GMOあおぞらネット銀行"
-        description: "サービス企業名\n全角文字\n振込入金口座契約サービス企業名\n"
-        minLength: 1
-        maxLength: 10
-      remarks:
-        type: "string"
-        example: "振込 ｲｰﾃﾞｲｰｱｲ テスト　タロウ あじさい支店 1036971"
-        description: "摘要内容\n全半角文字\n該当データがない場合は項目自体を設定しません\n"
-        minLength: 1
-        maxLength: 255
-      itemKey:
-        type: "string"
-        example: "20181012090520112541"
-        description: "明細キー\n半角数字\n口座ID毎に設定される明細キー（明細データtimestamp（μs））"
-        minLength: 1
-        maxLength: 24
-    description: "振込入金口座入金明細情報\n"
-  ErrorResponse:
-    type: "object"
-    required:
-      - "errorCode"
-      - "errorMessage"
-    properties:
-      errorCode:
-        type: "string"
-        example: "ERROR12345"
-        description: "エラーコード\n半角英数文字\n"
-        minLength: 1
-        maxLength: 10
-      errorMessage:
-        type: "string"
-        example: "エラーメッセージ"
-        description: "エラーメッセージ\n全半角英数記号文字\n"
-        minLength: 1
-        maxLength: 255
-  SubscribeRequestBody:
-    type: "object"
-    required:
-      - "eventTypes"
-      - "subscribeStatus"
-    properties:
-      subscribeStatus:
-        type: "string"
-        example: "1"
-        description: "配信状態\n半角数字\n0=配信停止要求\n1=配信開始要求\n"
-        minLength: 1
-        maxLength: 1
-      eventTypes:
-        type: "array"
-        description: "イベント種別のリスト\n"
-        items:
-          $ref: "#/definitions/EventType"
-    example:
-      subscribeStatus: "1"
-      eventTypes:
-        - eventType: "va-deposit-transaction"
-        - eventType: "va-deposit-transaction"
-  vaDepositTransactionMessage:
-    type: "object"
-    required:
-      - "account"
-      - "messageId"
-      - "timestamp"
-      - "vaTransaction"
-    properties:
-      messageId:
-        type: "string"
-        example: "1234567890ABCDEFGHI"
-        description: "メッセージID\n半角英数字\nメッセージを一意に識別するID\n"
-        minLength: 19
-        maxLength: 19
-      timestamp:
-        type: "string"
-        example: "2019-01-31T12:59:59+09:00"
-        description: "イベント生成日時\n半角文字\nISO8601 時差(offset)も表記\nYYYY-MM-DDTHH:MM:SS+09:00形式\n"
-        minLength: 25
-        maxLength: 25
-      account:
-        $ref: "#/definitions/Account"
-      vaTransaction:
-        $ref: "#/definitions/VaTransaction"
-    title: "Message"
-  vaDepositTransactionUnsentResponse:
-    type: "object"
-    required:
-      - "messages"
-    properties:
-      messages:
-        type: "array"
-        items:
-          $ref: "#/definitions/vaDepositTransactionMessage"
+components:
+  schemas:
+    EventType:
+      required:
+        - eventType
+      type: object
+      properties:
+        eventType:
+          maxLength: 128
+          minLength: 1
+          type: string
+          description: |
+            イベント種別
+            半角英数記号文字
+            va-deposit-transaction = 振込入金口座への入金明細通知
+          example: va-deposit-transaction
+      example:
+        eventType: va-deposit-transaction
+    SubscribeStatusResponse:
+      required:
+        - subscribeStatuses
+      type: object
+      properties:
+        subscribeStatuses:
+          type: array
+          items:
+            $ref: "#/components/schemas/SubscribeStatus"
+      example:
+        subscribeStatuses:
+          - subscribeStatus: "1"
+            eventType: va-deposit-transaction
+          - subscribeStatus: "1"
+            eventType: va-deposit-transaction
+    SubscribeStatus:
+      required:
+        - eventType
+        - subscribeStatus
+      type: object
+      properties:
+        eventType:
+          maxLength: 128
+          minLength: 1
+          type: string
+          description: |
+            イベント種別
+            半角英数記号文字
+            va-deposit-transaction = 振込入金口座への入金明細通知
+          example: va-deposit-transaction
+        subscribeStatus:
+          maxLength: 1
+          minLength: 1
+          type: string
+          description: |
+            通知配信状態
+            半角数字
+            1 = 配信中
+            0 = 配信停止中
+          example: "1"
+      example:
+        subscribeStatus: "1"
+        eventType: va-deposit-transaction
+    Account:
+      required:
+        - baseDate
+        - baseTime
+        - raAccountNumber
+        - raBranchCode
+        - raBranchNameKana
+        - raHolderName
+        - raId
+      type: object
+      properties:
+        raId:
+          maxLength: 29
+          minLength: 12
+          type: string
+          description: |
+            入金口座ID
+            半角数字
+            入金先の口座を識別するID
+          example: "201011234567"
+        raBranchCode:
+          maxLength: 3
+          minLength: 3
+          type: string
+          description: |
+            入金口座　支店コード
+            半角数字
+          example: "201"
+        raBranchNameKana:
+          maxLength: 15
+          minLength: 1
+          type: string
+          description: |
+            半角文字
+          example: ﾋﾞｼﾞﾈｽ
+        raAccountNumber:
+          maxLength: 7
+          minLength: 7
+          type: string
+          description: |
+            半角数字
+          example: "1234567"
+        raHolderName:
+          maxLength: 48
+          minLength: 1
+          type: string
+          description: |
+            全角文字
+          example: ＧＭＯ　あおぞら　太郎
+        baseDate:
+          maxLength: 10
+          minLength: 10
+          type: string
+          description: |
+            基準日
+            半角文字
+            応答日付、もしくは入金明細の基準日を示す。
+            YYYY-MM-DD形式
+          example: 2018-08-10
+        baseTime:
+          maxLength: 14
+          minLength: 14
+          type: string
+          description: "基準時刻\n半角文字\n応答時刻、もしくは入金明細の基準時刻を示す。 \nISO8601 時差(offset)も表記\nHH:MM:SS+09:00形式\n"
+          example: 10:00:00+09:00
+      description: |
+        入金口座情報
+      example:
+        baseDate: 2018-08-10
+        raBranchNameKana: ﾋﾞｼﾞﾈｽ
+        raBranchCode: "201"
+        raHolderName: ＧＭＯ　あおぞら　太郎
+        baseTime: 10:00:00+09:00
+        raId: "201011234567"
+        raAccountNumber: "1234567"
+    VaTransaction:
+      required:
+        - depositAmount
+        - itemKey
+        - partnerName
+        - paymentBankName
+        - paymentBranchName
+        - remitterNameKana
+        - transactionDate
+        - vaAccountNameKana
+        - vaAccountNumber
+        - vaBranchCode
+        - vaBranchNameKana
+        - vaId
+        - valueDate
+      type: object
+      properties:
+        vaId:
+          maxLength: 10
+          minLength: 10
+          type: string
+          description: |
+            振込入金口座ID
+            半角数字
+            振込入金口座を識別するID
+          example: "5021099622"
+        transactionDate:
+          maxLength: 10
+          minLength: 10
+          type: string
+          description: |
+            取引日
+            半角文字
+            YYYY-MM-DD形式
+          example: 2018-08-02
+        valueDate:
+          maxLength: 10
+          minLength: 10
+          type: string
+          description: |
+            起算日
+            半角文字
+            YYYY-MM-DD形式
+          example: 2018-08-02
+        vaBranchCode:
+          maxLength: 3
+          minLength: 3
+          type: string
+          description: |
+            支店コード
+            半角数字
+          example: "502"
+        vaBranchNameKana:
+          maxLength: 15
+          minLength: 1
+          type: string
+          description: |
+            支店名カナ
+            半角文字
+          example: ｱｼﾞｻｲ
+        vaAccountNumber:
+          maxLength: 7
+          minLength: 7
+          type: string
+          description: |
+            口座番号
+            半角数字
+          example: "1099622"
+        vaAccountNameKana:
+          maxLength: 40
+          minLength: 1
+          type: string
+          description: |
+            口座名義カナ
+            半角文字
+          example: ｱｵｿﾞﾗ ﾀﾛｳﾃｽﾄﾆﾕｳｷﾝｸﾞﾁ
+        depositAmount:
+          maxLength: 20
+          minLength: 1
+          type: string
+          description: |
+            入金金額
+            半角数字
+          example: "10000"
+        remitterNameKana:
+          maxLength: 48
+          minLength: 1
+          type: string
+          description: |
+            振込依頼人名カナ
+            半角文字
+          example: ﾃｽﾄ ﾀﾛｳ
+        paymentBankName:
+          maxLength: 30
+          minLength: 1
+          type: string
+          description: |
+            仕向金融機関名カナ
+            半角文字
+          example: ｱｵｿﾞﾗｷﾞﾝｺｳ
+        paymentBranchName:
+          maxLength: 15
+          minLength: 1
+          type: string
+          description: |
+            仕向支店名カナ
+            半角文字
+          example: ﾎﾝﾃﾝ
+        partnerName:
+          maxLength: 10
+          minLength: 1
+          type: string
+          description: |
+            サービス企業名
+            全角文字
+            振込入金口座契約サービス企業名
+          example: GMOあおぞらネット銀行
+        remarks:
+          maxLength: 255
+          minLength: 1
+          type: string
+          description: |
+            摘要内容
+            全半角文字
+            該当データがない場合は項目自体を設定しません
+          example: 振込 ｲｰﾃﾞｲｰｱｲ テスト　タロウ あじさい支店 1036971
+        itemKey:
+          maxLength: 24
+          minLength: 1
+          type: string
+          description: |-
+            明細キー
+            半角数字
+            口座ID毎に設定される明細キー（明細データtimestamp（μs））
+          example: "20181012090520112541"
+      description: |
+        振込入金口座入金明細情報
+      example:
+        depositAmount: "10000"
+        remitterNameKana: ﾃｽﾄ ﾀﾛｳ
+        vaBranchCode: "502"
+        paymentBankName: ｱｵｿﾞﾗｷﾞﾝｺｳ
+        partnerName: GMOあおぞらネット銀行
+        valueDate: 2018-08-02
+        paymentBranchName: ﾎﾝﾃﾝ
+        transactionDate: 2018-08-02
+        vaAccountNumber: "1099622"
+        itemKey: "20181012090520112541"
+        vaId: "5021099622"
+        vaAccountNameKana: ｱｵｿﾞﾗ ﾀﾛｳﾃｽﾄﾆﾕｳｷﾝｸﾞﾁ
+        vaBranchNameKana: ｱｼﾞｻｲ
+        remarks: 振込 ｲｰﾃﾞｲｰｱｲ テスト　タロウ あじさい支店 1036971
+    ErrorResponse:
+      required:
+        - errorCode
+        - errorMessage
+      type: object
+      properties:
+        errorCode:
+          maxLength: 10
+          minLength: 1
+          type: string
+          description: |
+            エラーコード
+            半角英数文字
+          example: ERROR12345
+        errorMessage:
+          maxLength: 255
+          minLength: 1
+          type: string
+          description: |
+            エラーメッセージ
+            全半角英数記号文字
+          example: エラーメッセージ
+    SubscribeRequestBody:
+      required:
+        - eventTypes
+        - subscribeStatus
+      type: object
+      properties:
+        subscribeStatus:
+          maxLength: 1
+          minLength: 1
+          type: string
+          description: |
+            配信状態
+            半角数字
+            0=配信停止要求
+            1=配信開始要求
+          example: "1"
+        eventTypes:
+          type: array
+          description: |
+            イベント種別のリスト
+          items:
+            $ref: "#/components/schemas/EventType"
+      example:
+        subscribeStatus: "1"
+        eventTypes:
+          - eventType: va-deposit-transaction
+          - eventType: va-deposit-transaction
+    vaDepositTransactionMessage:
+      title: Message
+      required:
+        - account
+        - messageId
+        - timestamp
+        - vaTransaction
+      type: object
+      properties:
+        messageId:
+          maxLength: 19
+          minLength: 19
+          type: string
+          description: |
+            メッセージID
+            半角英数字
+            メッセージを一意に識別するID
+          example: 1234567890ABCDEFGHI
+        timestamp:
+          maxLength: 25
+          minLength: 25
+          type: string
+          description: |
+            イベント生成日時
+            半角文字
+            ISO8601 時差(offset)も表記
+            YYYY-MM-DDTHH:MM:SS+09:00形式
+          example: 2019-01-31T12:59:59+09:00
+        account:
+          $ref: "#/components/schemas/Account"
+        vaTransaction:
+          $ref: "#/components/schemas/VaTransaction"
+      example:
+        messageId: 1234567890ABCDEFGHI
+        vaTransaction:
+          depositAmount: "10000"
+          remitterNameKana: ﾃｽﾄ ﾀﾛｳ
+          vaBranchCode: "502"
+          paymentBankName: ｱｵｿﾞﾗｷﾞﾝｺｳ
+          partnerName: GMOあおぞらネット銀行
+          valueDate: 2018-08-02
+          paymentBranchName: ﾎﾝﾃﾝ
+          transactionDate: 2018-08-02
+          vaAccountNumber: "1099622"
+          itemKey: "20181012090520112541"
+          vaId: "5021099622"
+          vaAccountNameKana: ｱｵｿﾞﾗ ﾀﾛｳﾃｽﾄﾆﾕｳｷﾝｸﾞﾁ
+          vaBranchNameKana: ｱｼﾞｻｲ
+          remarks: 振込 ｲｰﾃﾞｲｰｱｲ テスト　タロウ あじさい支店 1036971
+        account:
+          baseDate: 2018-08-10
+          raBranchNameKana: ﾋﾞｼﾞﾈｽ
+          raBranchCode: "201"
+          raHolderName: ＧＭＯ　あおぞら　太郎
+          baseTime: 10:00:00+09:00
+          raId: "201011234567"
+          raAccountNumber: "1234567"
+        timestamp: 2019-01-31T12:59:59+09:00
+    vaDepositTransactionUnsentResponse:
+      required:
+        - messages
+      type: object
+      properties:
+        messages:
+          type: array
+          items:
+            $ref: "#/components/schemas/vaDepositTransactionMessage"
+      example:
+        messages:
+          - messageId: 1234567890ABCDEFGHI
+            vaTransaction:
+              depositAmount: "10000"
+              remitterNameKana: ﾃｽﾄ ﾀﾛｳ
+              vaBranchCode: "502"
+              paymentBankName: ｱｵｿﾞﾗｷﾞﾝｺｳ
+              partnerName: GMOあおぞらネット銀行
+              valueDate: 2018-08-02
+              paymentBranchName: ﾎﾝﾃﾝ
+              transactionDate: 2018-08-02
+              vaAccountNumber: "1099622"
+              itemKey: "20181012090520112541"
+              vaId: "5021099622"
+              vaAccountNameKana: ｱｵｿﾞﾗ ﾀﾛｳﾃｽﾄﾆﾕｳｷﾝｸﾞﾁ
+              vaBranchNameKana: ｱｼﾞｻｲ
+              remarks: 振込 ｲｰﾃﾞｲｰｱｲ テスト　タロウ あじさい支店 1036971
+            account:
+              baseDate: 2018-08-10
+              raBranchNameKana: ﾋﾞｼﾞﾈｽ
+              raBranchCode: "201"
+              raHolderName: ＧＭＯ　あおぞら　太郎
+              baseTime: 10:00:00+09:00
+              raId: "201011234567"
+              raAccountNumber: "1234567"
+            timestamp: 2019-01-31T12:59:59+09:00
+          - messageId: 1234567890ABCDEFGHI
+            vaTransaction:
+              depositAmount: "10000"
+              remitterNameKana: ﾃｽﾄ ﾀﾛｳ
+              vaBranchCode: "502"
+              paymentBankName: ｱｵｿﾞﾗｷﾞﾝｺｳ
+              partnerName: GMOあおぞらネット銀行
+              valueDate: 2018-08-02
+              paymentBranchName: ﾎﾝﾃﾝ
+              transactionDate: 2018-08-02
+              vaAccountNumber: "1099622"
+              itemKey: "20181012090520112541"
+              vaId: "5021099622"
+              vaAccountNameKana: ｱｵｿﾞﾗ ﾀﾛｳﾃｽﾄﾆﾕｳｷﾝｸﾞﾁ
+              vaBranchNameKana: ｱｼﾞｻｲ
+              remarks: 振込 ｲｰﾃﾞｲｰｱｲ テスト　タロウ あじさい支店 1036971
+            account:
+              baseDate: 2018-08-10
+              raBranchNameKana: ﾋﾞｼﾞﾈｽ
+              raBranchCode: "201"
+              raHolderName: ＧＭＯ　あおぞら　太郎
+              baseTime: 10:00:00+09:00
+              raId: "201011234567"
+              raAccountNumber: "1234567"
+            timestamp: 2019-01-31T12:59:59+09:00
+x-original-swagger-version: "2.0"

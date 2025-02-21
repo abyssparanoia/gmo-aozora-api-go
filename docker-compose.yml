@@ -4,3 +4,7 @@ services:
     build: .
     volumes:
       - ./corporateclient:/swagger # ローカルのswaggerディレクトリをコンテナのswaggerディレクトリにマウント
+  swagger-codegen-webhookclient:
+    build: .
+    volumes:
+      - ./webhookclient:/swagger # ローカルのswaggerディレクトリをコンテナのswaggerディレクトリにマウント
